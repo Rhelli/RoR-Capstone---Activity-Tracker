@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'user#profile'
-  
+  root 'user#show'
+
   devise_for :users
 
 end
