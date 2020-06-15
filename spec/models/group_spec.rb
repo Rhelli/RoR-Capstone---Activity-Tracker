@@ -27,6 +27,11 @@ RSpec.describe Group, type: :model do
       expect(wut).to_not be_valid
     end
 
+    it 'allows a new group with a name containing numbers' do
+      oneup = Group.new(name: '1upFitness', description: "When you've just got to practice stomping goombas")
+      expect(oneup).to be_valid
+    end
+
     it 'rejects a group with an already used name, regardless of case' do
       Group.create!(name: 'Running', description: 'The process of putting one leg in front of the other')
       running_copy = Group.new(name: 'running', description: 'The process of putting one leg in front of the other')
