@@ -8,12 +8,11 @@ AllCops:
     - "README.md"
     - "node_modules/**/*"
     - "spec/support/*"
-  NewCops: enable
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 160
+  Max: 180
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
