@@ -8,7 +8,6 @@ AllCops:
     - "README.md"
     - "node_modules/**/*"
     - "spec/support/*"
-    - "db/*"
 
   DisplayCopNames: true
 
