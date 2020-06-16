@@ -10,16 +10,20 @@
   </head>
 
   <body>
-    <% if notice.present? %>
-      <div class="notice">
-        <p> <%= notice %> </p>
-      </div>
-    <% end %>
-    <% if alert.present? %>
-      <div class="alert">
-        <p> <%= alert %> </p>
-      </div>
-    <% end %>
-    <%= yield %>
+    <div>
+      <% if notice.present? %>
+        <div class="notice">
+          <p> <%= notice %> </p>
+        </div>
+      <% end %>
+      <% if alert.present? %>
+        <div class="alert">
+          <p> <%= alert %> </p>
+        </div>
+      <% end %>
+    </div>
+    <div class="main-container d-flex align-items-center justify-content-center">
+      <%= yield %>
+    </div>
   </body>
 </html>
