@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_16_115219) do
+ActiveRecord::Schema.define(version: 2020_06_16_125933) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -21,14 +21,24 @@ ActiveRecord::Schema.define(version: 2020_06_16_115219) do
     t.integer "author_id"
   end
 
+  create_table "activity_entry", id: false, force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "activity_id", null: false
+    t.index ["activity_id", "group_id"], name: "index_activity_entry_on_activity_id_and_group_id", unique: true
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "member_id"
-    t.integer "activity_entry_id"
     t.integer "creator_id"
+  end
+
+  create_table "membership", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.index ["user_id", "group_id"], name: "index_membership_on_user_id_and_group_id", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -45,4 +55,5 @@ ActiveRecord::Schema.define(version: 2020_06_16_115219) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "groups", "users", column: "creator_id"
 end
