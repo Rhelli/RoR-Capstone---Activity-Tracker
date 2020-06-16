@@ -1,5 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe Membership, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'membership model associations' do
+    it 'belongs to a user' do
+      x = Membership.reflect_on_association(:user)
+      expect(x.macro).to eq(:belongs_to)
+    end
+
+    it 'belongs to a group' do
+      x = Membership.reflect_on_association(:group)
+      expect(x.macro).to eq(:belongs_to)
+    end
+  end
 end

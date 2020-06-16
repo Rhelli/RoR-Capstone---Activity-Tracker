@@ -72,4 +72,21 @@ RSpec.describe User, type: :model do
       expect(samwise).to_not be_valid
     end
   end
+
+  context 'user model associations' do
+    it 'has many membersips' do
+      x = User.reflect_on_association(:memberships)
+      expect(x.macro).to eq(:has_many)
+    end
+
+    it 'has_many groups through memberships and a creator' do
+      x = User.reflect_on_association(:groups)
+      expect(x.macro).to eq(:has_many)
+    end
+
+    it 'has many activities as a creator' do
+      x = User.reflect_on_association(:activities)
+      expect(x.macro).to eq(:has_many)
+    end
+  end
 end
