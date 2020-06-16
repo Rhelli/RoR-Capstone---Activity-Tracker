@@ -8,12 +8,12 @@ AllCops:
     - "README.md"
     - "node_modules/**/*"
     - "spec/support/*"
-  NewCops: enable
+    - "db/*"
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 160
+  Max: 180
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
@@ -27,6 +27,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
+  Enabled: false
   ExcludedMethods: ['describe']
   Max: 30
 
@@ -42,6 +43,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/MutableConstant:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key

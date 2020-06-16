@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_15_162051) do
+ActiveRecord::Schema.define(version: 2020_06_16_162700) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,16 @@ ActiveRecord::Schema.define(version: 2020_06_15_162051) do
     t.integer "calories"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author_id"
+  end
+
+  create_table "activity_entries", force: :cascade do |t|
+    t.integer "activity_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["activity_id"], name: "index_activity_entries_on_activity_id", unique: true
+    t.index ["group_id"], name: "index_activity_entries_on_group_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -25,6 +35,16 @@ ActiveRecord::Schema.define(version: 2020_06_15_162051) do
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "creator_id"
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "group_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,4 +61,9 @@ ActiveRecord::Schema.define(version: 2020_06_15_162051) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activity_entries", "activities"
+  add_foreign_key "activity_entries", "groups"
+  add_foreign_key "groups", "users", column: "creator_id"
+  add_foreign_key "memberships", "groups"
+  add_foreign_key "memberships", "users"
 end
