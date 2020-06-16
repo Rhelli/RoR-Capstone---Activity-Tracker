@@ -3,6 +3,7 @@ class Activity < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :calories, presence: true, numericality: { greater_than: 0}
 
-  belongs_to :group
-  belongs_to :user
+  has_one :activity_entry, foreign_key: :activity_id
+  has_many :groups, through: :activity_entries
+  belongs_to :author, class_name: 'User'
 end
