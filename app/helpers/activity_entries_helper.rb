@@ -1,0 +1,2 @@
+module ActivityEntriesHelper
+end

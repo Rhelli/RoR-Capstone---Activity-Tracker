@@ -1,5 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 
+
 @font-face {
   font-family: 'Proxima Nova Rg';
   src: url('ProximaNova-Regular.woff2') format('woff2'),
@@ -26,7 +27,7 @@
 }
 
 body {
-  font: 700 16px/16px 'Proxima Nova Rg', monospace;
+  font: 300 16px/16px 'Proxima Nova Rg', monospace;
   height: 100vh;
   width: 100%;
   -webkit-font-smoothing: antialiased;
@@ -35,11 +36,39 @@ body {
   text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
+// FLASH MESSAGES -----------------------------------------------------------------------------------//
+.flash-messages {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #101010;
+  font: 600 18px/18px 'Proxima Nova Rg', monospace;
+
+  .notice {
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 4px;
+  }
+
+  .alert {
+    background-color: rgba(199, 0, 57, 0.9);
+    border-radius: 4px;
+  }
+}
+
+// MAIN CONTAINER -----------------------------------------------------------------------------------//
 .main-container {
   height: 100vh;
   width: 100%;
   background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(41,90,146,1) 76.9% );
 }
+
+.main-card {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+// DEVISE PAGES -------------------------------------------------------------------------------------//
 
 .devise-container {
   width: 100%;
@@ -114,10 +143,79 @@ form {
   }
 }
 
-// USER PROFILE PAGE ------------------------------------------------------------------------------//
+// NAVBAR ------------------------------------------------------------------------------------------//
+.navbar {
+  left: 0;
+  top: 73px;
+  bottom: 0;
+  height: 85%;
+  width: 15%;
+  color: rgba(256, 256, 256, 0.8);
+  font: 300 20px/20px 'Proxima Nova Rg', monospace;
+  a {
+    color: rgba(256, 256, 256, 0.8);
+  }
+  .navbar-nav  {
+    width: 100% !important;
+  }
+  .nav-item {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    svg {
+      position: absolute;
+      left: -10px;
+      border: 2px solid rgba(256, 256, 256, 0.5);
+      height: 40px;
+      width: 40px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    a {
+      width: 80%;
+      margin-left: auto;
+      text-align: left;
+      border-bottom: 2px solid #5089CA;
+    }
+  }
+  .navbar-header {
+    width: 100%;
+
+    img {
+      display: block;
+      height: 125px;
+      width: 125px;
+      border-radius: 50%;
+      border: 2px solid #5089CA;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font: 300 22px/22px 'Proxima Nova Rg', monospace;
+    }
+  }
+}
+
+// USER SHOW PAGE ------------------------------------------------------------------------------//
 .user-profile {
   width: 85%;
   height: 85%;
   background-color: #fafbfd;
+
+  .profile-column {
+    height: 100%;
+    .gravatar {
+      height: 200px;
+      width: 200px;
+      border-radius: 2px solid #5089CA;
+    }
+  }
+
+  .main-column {
+    height: 100%;
+    background-color: slateblue;
+    z-index: 2;
+  }
 }
 

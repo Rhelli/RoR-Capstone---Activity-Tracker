@@ -1,4 +1,15 @@
-<div class="container-fluid user-profile ml-auto mr-0">
-  <h1 class="jumbotron">Users#show</h1>
-  <p class="btn btn-primary btn-large">Find me in app/views/users/show.html.erb</p>
+<div class="row col-12">
+  <aside class="d-flex flex-column justify-content-center align-items-center profile-column col-3">
+    <%= gravatar_for(current_user) %>
+    <h1><%= full_name %></h1>
+  </aside>
+  <main class="d-flex flex-column main-column col-9">
+    <ul>
+      <li><p>option</p></li>
+      <li><p>option</p></li>
+      <li><p>option</p></li>
+      <li><p>option</p></li>
+      <li><p>option</p></li>
+    </ul>
+  </main>
 </div>

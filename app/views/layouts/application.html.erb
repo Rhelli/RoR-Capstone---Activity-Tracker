@@ -11,20 +11,15 @@
 
   <body>
     <div class="main-container d-flex align-items-center justify-content-center">
-      <% if !current_user.nil? %>
+      <%= render 'layouts/flash_messages' %>
+      <% if current_user.nil? %>
+        <%= yield %>
+      <% else %>
         <%= render 'layouts/navbar' %>
-      <% end %>
-      <% if notice.present? %>
-        <div class="notice">
-          <p> <%= notice %> </p>
+        <div class="container-fluid main-card d-flex flex-row justify-content-start align-items-start user-profile ml-auto mr-0 py-4 px-2">
+          <%= yield %>
         </div>
       <% end %>
-      <% if alert.present? %>
-        <div class="alert">
-          <p> <%= alert %> </p>
-        </div>
-      <% end %>
-      <%= yield %>
     </div>
   </body>
 </html>
