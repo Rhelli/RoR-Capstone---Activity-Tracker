@@ -1,5 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 
+
 @font-face {
   font-family: 'Proxima Nova Rg';
   src: url('ProximaNova-Regular.woff2') format('woff2'),
@@ -110,6 +111,41 @@ form {
     }
     ul {
       color: #f00;
+    }
+  }
+}
+
+// NAVBAR ------------------------------------------------------------------------------------------//
+.navbar {
+  height: 85%;
+  width: 15%;
+  color: rgba(256, 256, 256, 0.8);
+  font: 300 20px/20px 'Proxima Nova Rg', monospace;
+  a {
+    color: rgba(256, 256, 256, 0.8);
+  }
+  .navbar-nav  {
+    width: 100% !important;
+  }
+  .nav-item {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    svg {
+      position: absolute;
+      left: -10px;
+      border: 2px solid rgba(256, 256, 256, 0.5);
+      height: 40px;
+      width: 40px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    a {
+      width: 80%;
+      margin-left: auto;
+      text-align: left;
+      border-bottom: 2px solid #699AD1;
     }
   }
 }
