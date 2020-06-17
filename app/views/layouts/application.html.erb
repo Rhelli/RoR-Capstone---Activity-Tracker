@@ -24,7 +24,13 @@
           <p> <%= alert %> </p>
         </div>
       <% end %>
-      <%= yield %>
+      <% if current_user.nil? %>
+        <%= yield %>
+      <% else %>
+        <div class="container-fluid d-flex flex-row justify-content-start align-items-start user-profile ml-auto mr-0 py-4 px-2">
+          <%= yield %>
+        </div>
+      <% end %>
     </div>
   </body>
 </html>
