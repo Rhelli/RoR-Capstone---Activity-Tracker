@@ -18,7 +18,7 @@
         <i class="fas fa-users"></i><%= link_to 'My Groups', memberships_show_path(current_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <i class="fas fa-sign-out-alt"></i><%= link_to 'Sign Out', '#', class: 'nav-link' %>
+        <i class="fas fa-sign-out-alt"></i><%= link_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
       </li>
     </ul>
   </div>
