@@ -117,6 +117,9 @@ form {
 
 // NAVBAR ------------------------------------------------------------------------------------------//
 .navbar {
+  left: 0;
+  top: 73px;
+  bottom: 0;
   height: 85%;
   width: 15%;
   color: rgba(256, 256, 256, 0.8);
@@ -150,10 +153,25 @@ form {
   }
 }
 
-// USER PROFILE PAGE ------------------------------------------------------------------------------//
+// USER SHOW PAGE ------------------------------------------------------------------------------//
 .user-profile {
   width: 85%;
   height: 85%;
   background-color: #fafbfd;
+
+  .profile-column {
+    height: 100%;
+    .gravatar {
+      height: 200px;
+      width: 200px;
+      border-radius: 2px solid #699AD1;
+    }
+  }
+
+  .main-column {
+    height: 100%;
+    background-color: slateblue;
+    z-index: 2;
+  }
 }
 
