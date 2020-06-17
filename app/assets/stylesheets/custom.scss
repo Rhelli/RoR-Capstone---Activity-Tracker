@@ -148,7 +148,23 @@ form {
       width: 80%;
       margin-left: auto;
       text-align: left;
-      border-bottom: 2px solid #699AD1;
+      border-bottom: 2px solid #5089CA;
+    }
+  }
+  .navbar-header {
+    width: 100%;
+
+    img {
+      display: block;
+      height: 125px;
+      width: 125px;
+      border-radius: 50%;
+      border: 2px solid #5089CA;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font: 300 22px/22px 'Proxima Nova Rg', monospace;
     }
   }
 }
@@ -164,7 +180,7 @@ form {
     .gravatar {
       height: 200px;
       width: 200px;
-      border-radius: 2px solid #699AD1;
+      border-radius: 2px solid #5089CA;
     }
   }
 
