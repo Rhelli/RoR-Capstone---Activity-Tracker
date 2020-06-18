@@ -213,7 +213,7 @@ form {
 .profile-top-section {
   height: 50%;
   width: 100%;
-  border-bottom: 5px solid #bfbfbf;
+  border-bottom: 5px solid #D3E2F2;
 
   .profile-column {
     background-color: #5089CA;
@@ -296,10 +296,11 @@ form {
     .profile-quick-stats {
       padding: 0 12px 24px 12px;
       height: 100%;
+      width: 100%;
 
       .profile-activity-counter {
         height: auto;
-        width: 300px;
+        width: 32%;
         border: 6px solid #BDD3EB;
         border-radius: 8px;
         text-align: center;
@@ -309,7 +310,7 @@ form {
         box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
 
         .activity-count {
-          font: 700 120px/100px 'Proxima Nova Rg';
+          font: 700 110px/100px 'Proxima Nova Rg';
           border-bottom: 5px solid #DAF7A6;
         }
 
@@ -343,6 +344,9 @@ form {
       }
 
       .profile-widget {
+        width: 68%;
+        text-align: left;
+
         div {
           height: 100%;
         }
@@ -362,6 +366,10 @@ form {
 
             .recent-activity-name {
               font-weight: 700;
+              background-color: #32567E;
+              color: #fafbfd;
+              padding: 8px 14px;
+              border-radius: 25px;
             }
 
             .profile-widget-icon {
