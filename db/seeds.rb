@@ -134,7 +134,7 @@ User.all.each do |u|
 end
 
 18.times do |i|
-  name = activity_name_gen[i]
+  name = group_names[i]
   created_at = Faker::Time.between_dates(from: Date.today - 200, to: Date.today - 150, period: :day)
   updated_at = created_at
   creator_id = rand(1..30)

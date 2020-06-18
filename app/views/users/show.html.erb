@@ -1,15 +1,36 @@
-<div class="row col-12">
+<div class="row col-12 profile-top-section">
   <aside class="d-flex flex-column justify-content-center align-items-center profile-column col-3">
     <%= gravatar_for(current_user) %>
     <h1><%= full_name %></h1>
   </aside>
   <main class="d-flex flex-column main-column col-9">
-    <ul>
-      <li><p>option</p></li>
-      <li><p>option</p></li>
-      <li><p>option</p></li>
-      <li><p>option</p></li>
-      <li><p>option</p></li>
+    <ul class="float-right profile-quicklinks">
+      <li class="d-inline"><%= link_to 'Recent Activities', '#' %></li>
+      <li class="d-inline"><%= link_to 'My Friends', '#' %></li>
+      <li class="d-inline"><%= link_to 'My Stats', '#' %></li>
     </ul>
+    <div class="row profile-quick-stats">
+      <div class="col-3 profile-activity-counter d-flex justify-content-center align-items-center flex-column">
+        <p class="mb-0"><%= current_user.activities.count %></p>
+        <p>Activities in the last 4 weeks</p>
+      </div>
+      <div class="col-9 profile-widget">
+        <div class="row h-100">
+          <div class="col-5 profile-widget-activity">
+            <ul class="list-unstyled">
+              <% @my_groups.each do |m| %>
+                <li>
+                  <div class="my-group-name">
+                    <p><%= m.name %></p>
+                  </div>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col-7 profile-widget-stat">
+          </div>
+        </div>
+      </div>
+    </div>
   </main>
 </div>

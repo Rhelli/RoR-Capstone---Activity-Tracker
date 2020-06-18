@@ -202,20 +202,92 @@ form {
   width: 85%;
   height: 85%;
   background-color: #fafbfd;
+  overflow: hidden;
+
+  .profile-top-section {
+    height: 40%;
+    background: slateblue;
+  }
 
   .profile-column {
     height: 100%;
+    background: #8BC34A;
     .gravatar {
       height: 200px;
       width: 200px;
-      border-radius: 2px solid #5089CA;
     }
   }
 
   .main-column {
     height: 100%;
-    background-color: slateblue;
     z-index: 2;
+    
+    .profile-quicklinks {
+      font: 700 20px/20px 'Proxima Nova Rg', monospace;
+      margin-top: 30px;
+      
+      li {
+        margin-right: 15px;
+        background-color: rgba(55, 120, 194, 0.6);
+        padding: 8px 20px 8px 14px;
+        border-radius: 25px;
+        transition-duration: 0.2s;
+
+        &::before {
+          content: '\2022';
+          color: #fafbfd; /* Change the color */
+          font-weight: bold; /* If you want it to be bold */
+          display: inline-block; /* Needed to add space between the bullet and the text */
+          width: 0.8em; /* Also needed for space (tweak if needed) */
+          line-height: 22px;
+        }
+
+        a {
+          color: #fafbfd;
+        }
+
+        &:hover {
+          &::before,
+          a {
+            text-decoration: none;
+            color: #32567E;
+            transition-duration: 0.2s;
+          }
+        }
+      }
+    }
+
+    .profile-quick-stats {
+      padding: 0 12px 24px 12px;
+      height: 100%;
+
+      .profile-activity-counter {
+        background-color: #8BC34A;
+        height: 100%;
+
+        p:first-child {
+          text-align: center;
+          font: 700 120px/120px 'Proxima Nova Rg';
+        }
+
+        p:last-child {
+          text-align: center;
+        }
+      }
+
+      .profile-widget {
+
+        .profile-widget-activity {
+          height: 100%;
+          background-color: white;
+          padding: 20px;
+
+          .my-group-name {
+            font: 300 20px/20px 'Proxima Nova Rg', monospace;
+          }
+        }
+      }
+    }
   }
 }
 
