@@ -1,8 +1,9 @@
 <main class="profile-container w-100 h-100 p-3 m-0">
   <div class="w-100 profile-top-section mx-0 d-flex flex-row">
-    <aside class="profile-column d-flex flex-column justify-content-center align-items-center">
+    <aside class="profile-column d-flex flex-column justify-content-start align-items-center">
       <%= gravatar_for(current_user) %>
-      <h1><%= full_name %></h1>
+      <h1 class="mt-3"><%= full_name %></h1>
+      <p class="mt-1">Joined on <%= current_user.created_at.strftime('%B %e %Y') %></p>
     </aside>
     <div class="d-flex flex-column main-column">
       <ul class="float-right profile-quicklinks">
@@ -53,25 +54,22 @@
             </div>
           </div>
         </div>
-        <div class="profile-widget ml-3">
+        <div class="profile-widget h-100 ml-3">
           <div>
-            <div class="profile-widget-activity d-flex justify-content-start align-items-center flex-column">
-              <h2>Most Recent Activities</h2>
+            <div class="profile-widget-activity d-flex justify-content-center align-items-center flex-column pt-3">
+              <h2 class="mr-auto">Most Recent Activities</h2>
               <ul class="list-unstyled pt-4">
-                <% @recent_activities_all.each do |activity| %>
+                <% @recent_activities_all.limit(5).each do |activity| %>
                   <li>
                     <div class="my-group-name">
-                      <div class="d-inline-block profile-widget-group-name">
-                        <p><%= activity.name %></p>
-                        <p><%= activity.created_at %></p>
+                      <div class="profile-widget-group-name">
+                        <p class="d-inline-block recent-activity-name"><%= activity.name %></p>
+                        <p class="d-inline-block"> • <%= time_ago_in_words(activity.created_at) %> ago</p>
                       </div>
                     </div>
                   </li>
                 <% end %>
               </ul>
-            </div>
-            <div class="profile-widget-stat">
-
             </div>
           </div>
         </div>
@@ -79,22 +77,22 @@
     </div>
   </div>
   <div class="profile-bottom-section w-100 mx-0 d-flex flex-row">
-    <div class="profile-activities-list h-100 w-50">
+    <div class="profile-activities-list h-100 w-50 p-4">
       <h2>All Activities</h2>
-      <ul>
+      <ul class="list-unstyled all-activities-list pb-3">
         <% @all_activities.each do |activity| %>
           <li>
-            <div>
-              <%= activity.name %>
-              <%= activity.created_at %>
+            <div class='h-100'>
+              <p class='d-inline-block'><%= activity.name %> • </p>
+              <p class='d-inline-block'><%= activity.created_at.strftime('%B %e') %></p>
             </div>
           </li>
         <% end %>
       </ul>
     </div>
-    <div class="profile-group-list h-100 w-50">
+    <div class="profile-group-list h-100 w-50 p-4">
     <h2>My Groups</h2>
-      <ul class="list-unstyled pt-4">
+      <ul class="list-unstyled my-groups-list">
         <% @my_groups.each do |m| %>
           <li>
             <div class="my-group-name">

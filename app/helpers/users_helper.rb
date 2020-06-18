@@ -13,7 +13,7 @@ module UsersHelper
     inactive = '<i class="d-inline-block far fa-circle"></i>'
     active = '<i class="d-inline-block fas fa-circle"></i>'
     active_count = 7 - count
-    printer = String.new
+    printer = ''
     inactive_count = 7 - active_count
     inactive_count.times do
       printer.concat(active)

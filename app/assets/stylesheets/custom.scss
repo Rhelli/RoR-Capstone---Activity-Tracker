@@ -209,9 +209,9 @@ form {
 .profile-top-section {
   height: 50%;
   width: 100%;
-  background: slateblue;
 
   .profile-column {
+    margin-top: 58px;
     height: 100%;
     width: 25%;
     .gravatar {
@@ -262,13 +262,12 @@ form {
 
     .profile-quick-stats {
       padding: 0 12px 24px 12px;
-      height: auto;
+      height: 100%;
 
       .profile-activity-counter {
-        background-color: #8BC34A;
         height: auto;
         width: 300px;
-        padding-top: 50px;
+        padding-top: 20px;
 
         p:first-child {
           text-align: center;
@@ -307,16 +306,26 @@ form {
       }
 
       .profile-widget {
+        div {
+          height: 100%;
+        }
         .profile-widget-activity {
           height: 100%;
-          background-color: white;
           padding: 20px;
           overflow: hidden;
           overflow-y: auto;
 
+          h2 {
+            font: 300 32px/32px 'Proxima Nova Rg', monospace;
+          }
+
           .my-group-name {
-            font: 300 26px/26px 'Proxima Nova Rg', monospace;
+            font: 300 18px/18px 'Proxima Nova Rg', monospace;
             width: auto;
+
+            .recent-activity-name {
+              font-weight: 700;
+            }
 
             .profile-widget-icon {
               width: 30px;
@@ -331,13 +340,27 @@ form {
 .profile-bottom-section {
   background-color: transparent;
   height: 50%;
+  overflow: hidden;
 
   .profile-activities-list {
-    background: transparent;
+
+    .all-activities-list {
+      height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+    }
   }
 
   .profile-group-list {
-    background: teal;
+
+    .my-groups-list {
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    .my-group-name {
+      font-size: 18px;
+    }
   }
 }
 
