@@ -12,7 +12,7 @@
         <i class="fas fa-plus"></i><%= link_to 'New Activity', activities_new_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <i class="fas fa-running"></i><%= link_to 'My Activities', activities_show_path(current_user), class: 'nav-link' %>
+        <i class="fas fa-running"></i><%= link_to 'My Activities', activity_entries_show_path(current_user), class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <i class="fas fa-users"></i><%= link_to 'My Groups', memberships_show_path(current_user), class: 'nav-link' %>

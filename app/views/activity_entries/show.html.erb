@@ -1,2 +1,9 @@
-<h1>ActivityEntries#show</h1>
-<p>Find me in app/views/activity_entries/show.html.erb</p>
+<header>
+  <h1>My Activities</h1>
+  <p>All your most recent activities</p>
+</header>
+<main>
+  <% @my_activities.each do |activity| %>
+    <li><%= activity.name %></li>
+  <% end %>
+</main>
