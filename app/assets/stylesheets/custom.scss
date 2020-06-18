@@ -197,20 +197,23 @@ form {
   }
 }
 
-// USER SHOW PAGE ------------------------------------------------------------------------------//
-.user-profile {
+// SIGNED IN MAIN CONTAINER --------------------------------------------------------------------//
+.signed-in-container {
   width: 85%;
   height: 85%;
   background-color: #fafbfd;
   overflow: hidden;
+}
 
-  .profile-top-section {
-    height: 40%;
-    background: slateblue;
-  }
+// USER SHOW PAGE ------------------------------------------------------------------------------//
+.profile-top-section {
+  height: 50%;
+  width: 100%;
+  background: slateblue;
 
   .profile-column {
     height: 100%;
+    width: 25%;
     background: #8BC34A;
     .gravatar {
       height: 200px;
@@ -220,12 +223,13 @@ form {
 
   .main-column {
     height: 100%;
-    z-index: 2;
-    
+    width: 75%;
+    overflow: hidden;
+
     .profile-quicklinks {
       font: 700 20px/20px 'Proxima Nova Rg', monospace;
-      margin-top: 30px;
-      
+      margin-top: 20px;
+
       li {
         margin-right: 15px;
         background-color: rgba(55, 120, 194, 0.6);
@@ -259,11 +263,11 @@ form {
 
     .profile-quick-stats {
       padding: 0 12px 24px 12px;
-      height: 100%;
+      height: 80%;
 
       .profile-activity-counter {
         background-color: #8BC34A;
-        height: 100%;
+        height: auto;
 
         p:first-child {
           text-align: center;
@@ -276,18 +280,38 @@ form {
       }
 
       .profile-widget {
-
         .profile-widget-activity {
-          height: 100%;
+          height: 230px;
           background-color: white;
           padding: 20px;
+          overflow: hidden;
+          overflow-y: auto;
 
           .my-group-name {
-            font: 300 20px/20px 'Proxima Nova Rg', monospace;
+            font: 300 26px/26px 'Proxima Nova Rg', monospace;
+            width: auto;
+
+            .profile-widget-icon {
+              width: 30px;
+            }
           }
         }
       }
     }
   }
 }
+
+.profile-bottom-section {
+  background-color: red;
+  height: 50%;
+
+  .profile-activities-list {
+    background: blue;
+  }
+
+  .profile-group-list {
+    background: teal;
+  }
+}
+
 
