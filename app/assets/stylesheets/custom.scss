@@ -214,7 +214,6 @@ form {
   .profile-column {
     height: 100%;
     width: 25%;
-    background: #8BC34A;
     .gravatar {
       height: 200px;
       width: 200px;
@@ -263,11 +262,13 @@ form {
 
     .profile-quick-stats {
       padding: 0 12px 24px 12px;
-      height: 80%;
+      height: auto;
 
       .profile-activity-counter {
         background-color: #8BC34A;
         height: auto;
+        width: 300px;
+        padding-top: 50px;
 
         p:first-child {
           text-align: center;
@@ -277,11 +278,37 @@ form {
         p:last-child {
           text-align: center;
         }
+
+        .quick-stats-weekly-overview {
+
+          .quick-stats-weeks {
+            width: 40%;
+            p {
+              font: 300 16px/16px 'Proxima Nova Rg';
+            }
+          }
+
+          .quick-stats-dots {
+            width: 60%;
+            height: auto;
+            margin-top: 3px;
+            div {
+              height: 32px;
+            }
+            p {
+              font-size: 8px;
+              line-height: 16px;
+            }
+            .fa-circle {
+              margin-right: 12px;
+            }
+          }
+        }
       }
 
       .profile-widget {
         .profile-widget-activity {
-          height: 230px;
+          height: 100%;
           background-color: white;
           padding: 20px;
           overflow: hidden;
@@ -302,11 +329,11 @@ form {
 }
 
 .profile-bottom-section {
-  background-color: red;
+  background-color: transparent;
   height: 50%;
 
   .profile-activities-list {
-    background: blue;
+    background: transparent;
   }
 
   .profile-group-list {

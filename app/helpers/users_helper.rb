@@ -8,4 +8,19 @@ module UsersHelper
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?d=identicon&s=400"
     image_tag(gravatar_url, alt: user.first_name.titleize, class: 'gravatar')
   end
+
+  def quick_stats_dots(count)
+    inactive = '<i class="d-inline-block far fa-circle"></i>'
+    active = '<i class="d-inline-block fas fa-circle"></i>'
+    active_count = 7 - count
+    printer = String.new
+    inactive_count = 7 - active_count
+    inactive_count.times do
+      printer.concat(active)
+    end
+    active_count.times do
+      printer.concat(inactive)
+    end
+    printer.html_safe
+  end
 end

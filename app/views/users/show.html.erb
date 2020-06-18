@@ -11,25 +11,67 @@
         <li class="d-inline"><%= link_to 'My Stats', '#' %></li>
       </ul>
       <div class="profile-quick-stats d-flex flex-row">
-        <div class="profile-activity-counter d-flex justify-content-center align-items-center flex-column">
-          <p class="mb-0"><%= current_user.activities.count %></p>
+        <div class="profile-activity-counter d-flex justify-content-start align-items-center flex-column">
+          <p class="mb-0"><%= @recent_activities_all.count %></p>
           <p>Activities in the last 4 weeks</p>
+          <div class="quick-stats-weekly-overview w-100 d-flex">
+            <div class="quick-stats-weeks">
+              <div>
+                <p><%= (Date.today - 7).strftime('%B %e') %></p>
+              </div>
+              <div>
+                <p><%= (Date.today - 14).strftime('%B %e') %></p>
+              </div>
+              <div>
+                <p><%= (Date.today - 21).strftime('%B %e') %></p>
+              </div>
+              <div>
+                <p><%= (Date.today - 28).strftime('%B %e') %></p>
+              </div>
+            </div>
+            <div class="quick-stats-dots">
+              <div>
+                <p class="d-flex justify-content-start align-items-start h-100">
+                  <%= quick_stats_dots(@recent_activities_7.count)%>
+                </p>
+              </div>
+              <div>
+                <p class="d-flex justify-content-start align-items-start h-100">
+                  <%= quick_stats_dots(@recent_activities_14.count)%>
+                </p>
+              </div>
+              <div>
+                <p class="d-flex justify-content-start align-items-start h-100">
+                  <%= quick_stats_dots(@recent_activities_21.count)%>
+                </p>
+              </div>
+              <div>
+                <p class="d-flex justify-content-start align-items-start h-100">
+                  <%= quick_stats_dots(@recent_activities_28.count)%>
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="profile-widget ml-3">
           <div>
-            <div class="profile-widget-activity d-flex justify-content-start align-items-center">
+            <div class="profile-widget-activity d-flex justify-content-start align-items-center flex-column">
+              <h2>Most Recent Activities</h2>
               <ul class="list-unstyled pt-4">
-                <% @my_groups.each do |m| %>
+                <% @recent_activities_all.each do |activity| %>
                   <li>
                     <div class="my-group-name">
-                      <div class="d-inline-block profile-widget-icon"><i class="<%= m.icon %>"></i></div>
-                      <div class="d-inline-block profile-widget-group-name"><p><%= m.name %></p></div>
+                      <div class="d-inline-block profile-widget-group-name">
+                        <p><%= activity.name %></p>
+                        <p><%= activity.created_at %></p>
+                      </div>
                     </div>
                   </li>
                 <% end %>
               </ul>
             </div>
             <div class="profile-widget-stat">
+
             </div>
           </div>
         </div>
@@ -38,8 +80,30 @@
   </div>
   <div class="profile-bottom-section w-100 mx-0 d-flex flex-row">
     <div class="profile-activities-list h-100 w-50">
+      <h2>All Activities</h2>
+      <ul>
+        <% @all_activities.each do |activity| %>
+          <li>
+            <div>
+              <%= activity.name %>
+              <%= activity.created_at %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
     <div class="profile-group-list h-100 w-50">
+    <h2>My Groups</h2>
+      <ul class="list-unstyled pt-4">
+        <% @my_groups.each do |m| %>
+          <li>
+            <div class="my-group-name">
+              <div class="d-inline-block profile-widget-icon"><i class="<%= m.icon %>"></i></div>
+              <div class="d-inline-block profile-widget-group-name"><p><%= m.name %></p></div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
   </div>
 </main>

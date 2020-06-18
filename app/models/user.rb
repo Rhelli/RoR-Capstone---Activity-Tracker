@@ -15,4 +15,10 @@ class User < ApplicationRecord
   has_many :groups, foreign_key: :creator_id, class_name: 'Group'
   has_many :groups, through: :memberships
   has_many :activities, foreign_key: :author_id, class_name: 'Activity', dependent: :destroy
+
+  scope :recent_activities_all, ->(user) { user.activities.where('author_id = ? AND created_at >= ?', user.id, Date.today - 28).order(created_at: :desc) }
+  scope :recent_activities_7, ->(user) { user.activities.where('author_id = ? AND created_at >= ?', user.id, Date.today - 7) }
+  scope :recent_activities_14, ->(user) { user.activities.where('created_at BETWEEN ? AND ?', Date.today - 14, Date.today - 7) }
+  scope :recent_activities_21, ->(user) { user.activities.where('created_at BETWEEN ? AND ?', Date.today - 21, Date.today - 14) }
+  scope :recent_activities_28, ->(user) { user.activities.where('created_at BETWEEN ? AND ?', Date.today - 28, Date.today - 21) }
 end
