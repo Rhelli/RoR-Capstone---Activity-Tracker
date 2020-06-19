@@ -68,8 +68,8 @@ body {
 }
 
 .main-card {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
 }
 
 // DEVISE PAGES -------------------------------------------------------------------------------------//
@@ -206,7 +206,11 @@ form {
   width: 85%;
   height: 85%;
   background-color: #fafbfd;
+  border: 1px solid #3C6798;
   overflow: hidden;
+  -webkit-box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
 }
 
 // USER SHOW PAGE ------------------------------------------------------------------------------//
@@ -381,6 +385,10 @@ form {
                 margin-bottom: 5px;
                 padding: 8px 12px;
                 border-radius: 30px;
+                border: 1px solid #4678B1;
+                -webkit-box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
+                -moz-box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
+                box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
               }
 
               .recent-activity-name {
@@ -390,9 +398,9 @@ form {
                 color: #fafbfd;
                 padding: 8px 14px;
                 border-radius: 25px;
-                -webkit-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
-                -moz-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
-                box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
+                -webkit-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+                -moz-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+                box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
               }
             }
           }

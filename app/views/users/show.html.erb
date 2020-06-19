@@ -58,11 +58,11 @@
           <div>
             <div class="profile-widget-activity d-flex justify-content-center align-items-center flex-column pt-1 pr-0">
               <h2 class="mr-auto ml-3">Most Recent Activities</h2>
-              <ul class="list-unstyled pt-2 w-100 mb-0 pb-0">
+              <ul class="list-unstyled pt-2 w-100 mb-0 pb-0 px-1">
                 <% @recent_activities_all.limit(5).each do |activity| %>
                   <li>
                     <div class="my-group-name">
-                      <div class="profile-widget-group-name">
+                      <div class="profile-widget-group-name mb-2">
                         <p class="d-inline-block mb-0 recent-activity-name"><%= activity.name %></p>
                         <p class="d-inline-block mb-0"> • <%= activity.calories %> cals</p>
                         <p class="d-inline-block mb-0"> • <%= time_converter(activity.amount) %></p>
