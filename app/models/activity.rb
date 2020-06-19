@@ -4,6 +4,6 @@ class Activity < ApplicationRecord
   validates :calories, presence: true, numericality: { greater_than: 0}
 
   has_one :activity_entry, foreign_key: :activity_id
-  has_many :groups, through: :activity_entries
+  has_many :groups, through: :activity_entry
   belongs_to :author, class_name: 'User'
 end

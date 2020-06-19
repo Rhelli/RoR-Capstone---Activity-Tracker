@@ -85,7 +85,13 @@ group_names = [
   'Other'
 ]
 
-User.create!(first_name: 'Jimbo', last_name: 'Baggins', email: 'jimbo@email.com', password: 'password', password_confirmation: 'password')
+User.create!(
+  first_name: 'Jimbo',
+  last_name: 'Baggins',
+  email: 'jimbo@email.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
 
 30.times do
   first_name = Faker::Name.first_name
@@ -114,7 +120,7 @@ def time_gen(string)
 end
 
 User.all.each do |u|
-  2.times do
+  10.times do
     name_gen = adjective_gen.sample + time_of_day.sample + activity_name_gen.sample
     name = name_gen.to_s
     amount = rand(10..260)
@@ -133,8 +139,21 @@ User.all.each do |u|
   end
 end
 
+def group_icon_match(group_names)
+  return "fas fa-running" if group_names == 'Running' || group_names == 'Jogging'
+  return "fas fa-walking" if group_names == 'Walking'
+  return "fas fa-swimmer" if group_names == 'Swimming'
+  return "fas fa-anchor" if group_names == 'Kayaking' || group_names == 'Rowing'
+  return "fas fa-heartbeat" if group_names == 'HIIT' || group_names == 'Cardio' || group_names == 'Other'
+  return "fas fa-dumbbell" if group_names == 'Weight Lifting'
+  return "fas fa-biking" if group_names == 'Cycling'
+  return "fas fa-spa" if group_names == 'Yoga' || group_names == 'Pilates'
+  return "fas fa-burn" if group_names == 'Abdominal Workouts' || group_names == 'Calisthenics' || group_names == 'Extreme Frisbee' || group_names == 'Wrestling'
+  return "fas fa-golf-ball" if group_names == 'Golf'
+end
+
 18.times do |i|
-  name = activity_name_gen[i]
+  name = group_names[i]
   created_at = Faker::Time.between_dates(from: Date.today - 200, to: Date.today - 150, period: :day)
   updated_at = created_at
   creator_id = rand(1..30)
@@ -143,13 +162,14 @@ end
     description: nil,
     created_at: created_at,
     updated_at: updated_at,
-    creator_id: creator_id
+    creator_id: creator_id,
+    icon: group_icon_match(name)
   )
 end
 
 User.all.each do |u|
   group_id_array = (1..18).to_a
-  3.times do
+  4.times do
     sample = group_id_array.sample
     group_id = sample
     created_at = Faker::Time.between_dates(from: Date.today - 120, to: Date.today - 80, period: :all)
