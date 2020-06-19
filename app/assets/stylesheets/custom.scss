@@ -373,22 +373,26 @@ form {
 
             .my-group-name {
               font: 300 18px/18px 'Proxima Nova Rg', monospace;
-              width: auto;
+              float: left;
 
               .profile-widget-group-name {
                 width: auto;
                 background-color: #5089CA;
                 margin-bottom: 5px;
-                padding: 8px 10px;
+                padding: 8px 12px;
                 border-radius: 30px;
               }
 
               .recent-activity-name {
                 font-weight: 700;
                 background-color: #32567E;
+                border: 1px solid #2C4B6E;
                 color: #fafbfd;
                 padding: 8px 14px;
                 border-radius: 25px;
+                -webkit-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
+                -moz-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
+                box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.8);
               }
             }
           }
@@ -402,25 +406,66 @@ form {
   background-color: transparent;
   height: 45%;
   overflow: hidden;
+  border-bottom: 1px solid #D3E2F2;
 
   .profile-activities-list {
+    overflow: hidden;
+    height: 12%;
 
     .all-activities-list {
-      height: 100%;
-      overflow: hidden;
+      height: 88%;
       overflow-y: auto;
+
+      .all-activities-item {
+        background-color: #bfbfbf;
+        padding: 10px 14px;
+        border-radius: 30px;
+        border: 1px solid #8F8F8F;
+        box-shadow: 0px 1px 4px 0px #101010;
+      }
     }
   }
 
   .profile-group-list {
+    overflow: hidden;
+    height: 80%;
+
+    h2 {
+      height: 15%;
+    }
 
     .my-groups-list {
+      height: 85%;
       overflow: hidden;
       overflow-y: auto;
     }
 
     .my-group-name {
-      font-size: 18px;
+      width: auto !important;
+      font-size: 26px;
+      background-color: rgba(95, 181, 35,0.9);
+      border: 1px solid #47881A;
+      padding: 14px 24px 14px 20px;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      border-radius: 40px;
+      overflow-y: auto;
+      -webkit-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+      -moz-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+      box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+
+      svg {
+        width: 47px;
+        height: 47px;
+        background-color: #fafbfd;
+        padding: 9px 7px 7px 7px;
+        margin-right: 12px;
+        border-radius: 50%;
+        border: 2px solid #539E1F;
+        -webkit-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+        -moz-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+        box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+      }
     }
   }
 }
