@@ -85,7 +85,13 @@ group_names = [
   'Other'
 ]
 
-User.create!(first_name: 'Jimbo', last_name: 'Baggins', email: 'jimbo@email.com', password: 'password', password_confirmation: 'password')
+User.create!(
+  first_name: 'Jimbo',
+  last_name: 'Baggins',
+  email: 'jimbo@email.com',
+  password: 'password',
+  password_confirmation: 'password'
+)
 
 30.times do
   first_name = Faker::Name.first_name
@@ -114,7 +120,7 @@ def time_gen(string)
 end
 
 User.all.each do |u|
-  2.times do
+  10.times do
     name_gen = adjective_gen.sample + time_of_day.sample + activity_name_gen.sample
     name = name_gen.to_s
     amount = rand(10..260)
@@ -163,7 +169,7 @@ end
 
 User.all.each do |u|
   group_id_array = (1..18).to_a
-  3.times do
+  4.times do
     sample = group_id_array.sample
     group_id = sample
     created_at = Faker::Time.between_dates(from: Date.today - 120, to: Date.today - 80, period: :all)

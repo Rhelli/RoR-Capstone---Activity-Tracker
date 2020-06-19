@@ -211,13 +211,14 @@ form {
 
 // USER SHOW PAGE ------------------------------------------------------------------------------//
 .profile-top-section {
-  height: 50%;
+  height: 55%;
   width: 100%;
   border-bottom: 5px solid #D3E2F2;
+  overflow: hidden;
 
   .profile-column {
     background-color: #5089CA;
-    margin-top: 58px;
+    margin-top: 60px;
     height: 80%;
     width: 25%;
     border-radius: 8px;
@@ -261,6 +262,7 @@ form {
     .profile-quicklinks {
       font: 700 20px/20px 'Proxima Nova Rg', monospace;
       margin-top: 20px;
+      height: 15%;
 
       li {
         margin-right: 15px;
@@ -294,12 +296,12 @@ form {
     }
 
     .profile-quick-stats {
-      padding: 0 12px 24px 12px;
-      height: 100%;
+      padding: 0 0 24px 12px;
+      height: 85%;
       width: 100%;
 
       .profile-activity-counter {
-        height: auto;
+        height: 100%;
         width: 32%;
         border: 6px solid #BDD3EB;
         border-radius: 8px;
@@ -345,6 +347,7 @@ form {
 
       .profile-widget {
         width: 68%;
+        height: 100%;
         text-align: left;
 
         div {
@@ -352,28 +355,41 @@ form {
         }
         .profile-widget-activity {
           height: 100%;
-          padding: 20px;
-          overflow: hidden;
-          overflow-y: auto;
+
+          ul {
+            overflow: hidden;
+            overflow-y: auto;
+          }
 
           h2 {
             font: 300 32px/32px 'Proxima Nova Rg', monospace;
           }
 
-          .my-group-name {
-            font: 300 18px/18px 'Proxima Nova Rg', monospace;
+          li {
             width: auto;
+            word-wrap: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
 
-            .recent-activity-name {
-              font-weight: 700;
-              background-color: #32567E;
-              color: #fafbfd;
-              padding: 8px 14px;
-              border-radius: 25px;
-            }
+            .my-group-name {
+              font: 300 18px/18px 'Proxima Nova Rg', monospace;
+              width: auto;
 
-            .profile-widget-icon {
-              width: 30px;
+              .profile-widget-group-name {
+                width: auto;
+                background-color: #5089CA;
+                margin-bottom: 5px;
+                padding: 8px 10px;
+                border-radius: 30px;
+              }
+
+              .recent-activity-name {
+                font-weight: 700;
+                background-color: #32567E;
+                color: #fafbfd;
+                padding: 8px 14px;
+                border-radius: 25px;
+              }
             }
           }
         }
@@ -384,7 +400,7 @@ form {
 
 .profile-bottom-section {
   background-color: transparent;
-  height: 50%;
+  height: 45%;
   overflow: hidden;
 
   .profile-activities-list {
