@@ -24,7 +24,6 @@
             <%= f.label :group_id, 'Exercise Group' %>
             <%= f.collection_select(:group_id, Group.all, :id, :name) %>
           </div>
-
         </div>          
         <%= f.submit "Log Activity", class: "new-activity-submit" %>
       <% end %>

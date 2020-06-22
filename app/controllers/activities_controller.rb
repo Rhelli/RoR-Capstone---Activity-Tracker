@@ -6,6 +6,7 @@ class ActivitiesController < ApplicationController
   def create
     @activity = current_user.activities.build(activity_params)
     if @activity.save
+      @activity_entry = ActivityEntry.create!(activity_id: @activity.id, group_id: @activity.group_id)
       flash[:notice] = 'Activity Saved.'
     else
       flash[:alert] = 'An error occurred. Please try again.'
