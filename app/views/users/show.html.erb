@@ -85,6 +85,7 @@
         <% @all_activities.each do |activity| %>
           <li class="d-table">
             <div class='h-100 w-auto all-activities-item mb-3'>
+              <p class='d-inline-block mb-0 mr-1 w-auto'><i class="<%= activity.group_icon %>"></i></p>
               <p class='d-inline-block mb-0 w-auto'><%= activity.name %> • </p>
               <p class='d-inline-block mb-0 w-auto'><%= activity.created_at.strftime('%B %e') %></p>
             </div>

@@ -12,4 +12,8 @@ class Group < ApplicationRecord
   def group_icon
     self.icon.html_safe
   end
+
+  def group_name
+    self.name
+  end
 end

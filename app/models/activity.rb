@@ -8,5 +8,6 @@ class Activity < ApplicationRecord
   belongs_to :author, class_name: 'User'
 
   delegate :group_icon, to: :group, allow_nil: false
+  delegate :group_name, to: :group, allow_nil: false
 
 end
