@@ -10,6 +10,7 @@ module UsersHelper
   end
 
   def quick_stats_dots(count)
+    count = 7 if count > 7
     inactive = '<i class="d-inline-block far fa-circle"></i>'
     active = '<i class="d-inline-block fas fa-circle"></i>'
     active_count = 7 - count

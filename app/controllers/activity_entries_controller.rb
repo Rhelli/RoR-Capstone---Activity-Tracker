@@ -1,6 +1,6 @@
 class ActivityEntriesController < ApplicationController
   def show
-    @my_activities = current_user.activity_entry
+    @my_activities = current_user.activities.all
   end
 
   def new
