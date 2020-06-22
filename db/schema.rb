@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_18_121506) do
+ActiveRecord::Schema.define(version: 2020_06_19_142241) do
 
   create_table "activities", force: :cascade do |t|
     t.string "name"
@@ -19,6 +19,8 @@ ActiveRecord::Schema.define(version: 2020_06_18_121506) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "author_id"
+    t.integer "group_id"
+    t.index ["group_id"], name: "index_activities_on_group_id"
   end
 
   create_table "activity_entries", force: :cascade do |t|
@@ -62,6 +64,7 @@ ActiveRecord::Schema.define(version: 2020_06_18_121506) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "activities", "groups"
   add_foreign_key "activity_entries", "activities"
   add_foreign_key "activity_entries", "groups"
   add_foreign_key "groups", "users", column: "creator_id"

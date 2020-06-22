@@ -1,2 +1,32 @@
-<h1>Activities#new</h1>
-<p>Find me in app/views/activities/new.html.erb</p>
+<main class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+  <div class="new-activity-container d-flex justify-content-center align-items-center flex-column">
+    <h1>Create A New Activity</h1>
+    <div class="new-activity-form d-flex justify-content-center align-items-center flex-column">
+      <%= form_for(@activity) do |f| %>
+        <div class="new-activity-form-fields">
+
+          <div class="field">
+            <%= f.label :name, 'Title' %><br />
+            <%= f.text_field :name %>
+          </div>
+
+          <div class="field">
+            <%= f.label :amount, 'Time' %><br />
+            <%= f.text_field :amount, placeholder: 'How many minutes of exercise?' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :calories, 'Calories Burnt' %><br />
+            <%= f.text_field :calories, placeholder: 'How many calories did you burn?' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :group_id, 'Exercise Group' %>
+            <%= f.collection_select(:group_id, Group.all, :id, :name) %>
+          </div>
+        </div>          
+        <%= f.submit "Log Activity", class: "new-activity-submit" %>
+      <% end %>
+    </div>
+  </div>
+</main>
