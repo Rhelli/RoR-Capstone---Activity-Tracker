@@ -490,4 +490,53 @@ form {
   }
 }
 
+// ACTIVITIES SHOW PAGE ---------------------------------------------------------------------------//
+.my-activities-container {
+  width: 90%;
+  height: 80%;
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(41,90,146,1) 76.9% );
+  border-radius: 4px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  header {
+    h1 {
+      color: #fafbfd;
+      font: 700 46px/46px 'Proxima Nova Rg';
+    }
+  }
+
+  .my-activities-list {
+    width: 80%;
+    height: 70%;
+    background-color: #fafbfd;
+    border: 1px solid #3C6798;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+
+    ul {
+      height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+
+      .activity-list-item {
+        border-bottom: 1px solid #bfbfbf;
+        padding: 14px 16px;
+
+        h2 {
+          margin-bottom: 0;
+        }
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 

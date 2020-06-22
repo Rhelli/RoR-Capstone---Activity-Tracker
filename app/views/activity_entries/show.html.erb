@@ -1,9 +1,23 @@
-<header>
-  <h1>My Activities</h1>
-  <p>All your most recent activities</p>
-</header>
-<main>
-  <% @my_activities.each do |activity| %>
-    <li><%= activity.name %></li>
-  <% end %>
+<main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
+  <div class="my-activities-container d-flex justify-content-center align-items-center flex-column p-0 m-0">
+    <header class="justify-text-center">
+      <h1>My Activities</h1>
+      <p>All your most recent activities</p>
+    </header>
+    <div class="my-activities-list p-4">
+      <ul class="list-unstyled p-0 m-0 w-100">
+        <% @my_activities.each do |activity| %>
+          <li>
+            <div class="activity-list-item">
+              <i class="<%= activity.group_icon %>"></i>
+              <h2 class="d-inline-block"><%= activity.name %></h2>
+              <p class="d-inline-block"><%= activity.calories %></p>
+              <p class="d-inline-block"><%= time_converter(activity.amount) %></p>
+              <p class="d-inline-block"><%= time_ago_in_words(activity.created_at) %> ago.</p>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      </div>
+  </div>
 </main>

@@ -24,14 +24,4 @@ module UsersHelper
     end
     printer.html_safe
   end
-
-  def time_converter(mins)
-    hours = mins / 60
-    remainder = mins % 60
-    if hours < 1
-      "#{remainder} mins"
-    else
-      "#{hours}h:#{remainder}m"
-    end
-  end
 end
