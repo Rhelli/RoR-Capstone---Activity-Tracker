@@ -24,7 +24,7 @@
   0% {
     background-color: #A569BD;
   }
-  50% {
+  75% {
     background-color: #7C4F8E;
   }
   100% {
@@ -844,6 +844,10 @@ form {
     background-color: #fafbfd;
     width: 90%;
     height: 75%;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
 
     .my-groups-list {
       border-right: 2px solid #dfdfdf;
@@ -925,7 +929,7 @@ form {
               border-radius: 50%;
               color: #fafbfd;
               padding: 3px 3px 3px 4px;
-              animation: new-activity 1s infinite;
+              animation: new-activity 2s infinite;
             }
           }
 
@@ -945,8 +949,70 @@ form {
       width: 35%;
       overflow: hidden;
 
+      h2 {
+        text-align: center;
+        font-size: 26px;
+      }
+
       ul {
         overflow-y: auto;
+      }
+
+      .non-member-group {
+        border-bottom: 1px solid #dfdfdf;
+        padding: 8px 14px;
+
+        .group-name-cont {
+          max-width: 45%;
+        }
+
+        .group-name {
+          font-size: 22px;
+          font-weight: 400;
+          line-height: 1.5;
+          white-space: nowrap;
+          word-break: normal;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          
+          a {
+            color: #3C6798;
+            transition-duration: 0.2s;
+
+            &:hover {
+              color: #A569BD;
+              text-decoration: none;
+              transition-duration: 0.15s;
+            }
+          }
+        }
+
+        .sug-group-stat {
+          text-align: center;
+          background-color: rgba(206, 147, 216, 0.3);
+
+          .mem-count {
+            border-right: 1px solid rgba(206, 147, 216, 0.1);
+            padding: 8px 12px;
+          }
+
+          .new-act {
+            border-left: 1px solid rgba(206, 147, 216, 0.1);
+            padding: 8px 12px;
+          }
+          div {
+            p:first-child {
+              font-size: 18px;
+            }
+            p:last-child {
+              font-size: 12px;
+            }
+          }
+        }
+
+        p {
+          margin-bottom: 0;
+        }
       }
     }
   }

@@ -37,14 +37,25 @@
           <% end %>
         </ul>
       </div>
-      <div class="my-groups-join h-100 d-flex flex-column justify-content-center align-items-start p-3">
-        <h2>Groups You May Be Interested In</h2>
+      <div class="my-groups-join h-100 d-flex flex-column justify-content-center align-items-start py-3 px-2">
+        <h2 class="w-100">Suggested Groups</h2>
         <ul class="list-unstyled w-100">
           <% @non_memberships.each do |non_mem| %>
             <li>
-              <div class="d-flex flex-row align-items-center">
-                <p><%= non_mem.group_name %></p>
-                <p><%= Membership.member_count(non_mem) %></p>
+              <div class="non-member-group d-flex flex-row align-items-center">
+                <div class="group-name-cont">
+                  <p class="group-name"><%= link_to "#{non_mem.group_name}", groups_show_path(non_mem) %></p>
+                </div>
+                <div class="d-flex flex-row ml-auto sug-group-stat">
+                  <div class="d-flex mem-count align-items-center justify-content-center flex-column">
+                    <p><%= Membership.member_count(non_mem) %></p>
+                    <p>members</p>
+                  </div>
+                  <div class="d-flex new-act align-items-center justify-content-center flex-column">
+                    <p><%= ActivityEntry.recent_group_activity(non_mem) %></p>
+                    <p>new activities</p>
+                  </div>
+                </div>
               </div>
             </li>
           <% end %>
