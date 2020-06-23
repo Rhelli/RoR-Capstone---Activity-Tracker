@@ -401,6 +401,18 @@ form {
                 -webkit-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
                 -moz-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
                 box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+
+                a {
+                  color: inherit;
+                  text-decoration: none;
+                  transition-duration: 0.2s;
+                  
+                  &:hover {
+                    text-decoration: none;
+                    color: #5fb523;
+                    transition-duration: 0.15s;
+                  }
+                }
               }
             }
           }
@@ -431,6 +443,18 @@ form {
         border-radius: 30px;
         border: 1px solid #8F8F8F;
         box-shadow: 0px 1px 4px 0px #101010;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          transition-duration: 0.2s;
+
+          &:hover {
+            color: #3C6798;
+            text-decoration: none;
+            transition-duration: 0.15s;
+          }
+        }
       }
     }
   }
@@ -580,7 +604,103 @@ form {
 // ACTIVITIES SHOW PAGE ------------------------------------------------------------------------------------//
 .activities-show-card {
   background-color: #fafbfd;
-  height: 70%;
+  height: 75%;
   width: 50%;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+  box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+
+
+  .group-badge {
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+
+
+    p {
+      font-size: 26px;
+    }
+
+    .icon {
+      background-color: #5fb523;
+      width: 100px;
+      height: 100px;
+      font-size: 56px;
+      border-radius: 50%;
+      color: #fafbfd;
+      border: 2px solid #539E1F;
+    }
+  }
+
+  .workout-time {
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 36px;
+    
+    p {
+      text-shadow: 0px 15px 18px rgba(149,149,149,0.87);
+    }
+  }
+
+  .calories-main {
+    border-top: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    font-size: 36px;
+    p:last-child {
+      font-size: 20px;
+    }
+  } 
+
+  .calories-stats {
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+
+    .cal-stats-top {
+      border-bottom: 1px solid #dfdfdf;
+      font-size: 42px;
+
+      .gold {
+        color: #F1C40F;
+      }
+
+      .silver {
+        color: #B2BABB;
+      }
+
+      .bronze {
+        color: #B9770E;
+      }
+
+      .award {
+        color: #A569BD;
+      }
+
+      .rank-phrase {
+        font-size: 16px;
+        padding: 8px 12px;
+        text-align: center;
+      }
+    }
+
+    .cal-stats-bottom {
+      border-top: 1px solid #dfdfdf;
+
+      .cals-ph {
+        p:first-child {
+          font-size: 22px;
+        }
+
+        border-right: 1px solid #dfdfdf;
+      }
+
+      .cals-pm {
+        p:first-child {
+          font-size: 22px;
+        }
+
+        border-left: 1px #dfdfdf;
+      }
+    }
+  }
 }
 

@@ -7,6 +7,8 @@ module ActivitiesHelper
       '2nd Most Calories Burned In One Session'
     elsif activity.calories > ranked_activities.last.calories
       '3rd Most Calories Burned In One Session'
+    else
+      'Practice Makes Perfect! Keep It Up!'
     end
   end
 
@@ -18,6 +20,8 @@ module ActivitiesHelper
       'fas fa-trophy silver'
     elsif activity.calories > ranked_activities.last.calories
       'fas fa-trophy bronze'
+    else
+      'fas fa-award award'
     end
   end
 

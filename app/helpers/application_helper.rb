@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def time_converter(mins)
+  def time_converter(mins, stacked=nil)
     hours = mins / 60
     remainder = mins % 60
     if hours < 1
