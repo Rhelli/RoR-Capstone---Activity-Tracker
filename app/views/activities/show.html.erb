@@ -1,0 +1,43 @@
+<main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
+  <div class="my-activities-container d-flex justify-content-center align-items-center flex-column p-0 m-0">
+    <header>
+      <h1><%= @activity.name %></h1>
+      <p>Created <%= time_ago_in_words(@activity.created_at) %> ago.</p>
+    </header>
+    <div class="activities-show-card">
+      <div class="h-50 w-100 d-flex justify-content-center flex-row align-items-center">
+        <div class="group-badge w-50 h-100 d-flex  flex-column justify-content-center align-items-center">
+          <p class="icon d-flex justify-content-center align-items-center">
+            <i class="<%= @activity.group_icon %> mb-1"></i>
+          </p>
+          <p><%= @activity.group_name %></p>
+        </div>
+        <div class="workout-time w-50 h-100 d-flex justify-content-center align-items-center">
+          <p><%= time_converter(@activity.amount) %></p>
+        </div>
+      </div>
+      <div class="h-50 w-100 d-flex justify-content-center flex-row align-items-center">
+        <div class="calories-main w-50 h-100 d-flex flex-column justify-content-center align-items-center">
+          <p class="mb-2"><%= @activity.calories %></p>
+          <p class="mb-0">cals burned</p>
+        </div>
+        <div class="calories-stats w-50 h-100 d-flex flex-column">
+          <div class="cal-stats-top d-flex w-100 h-50 flex-column justify-content-center align-items-center p-2">
+            <p class=" mb-2"><i class="<%= calories_badges_gen(@activity) %>"></i></p>
+            <p class="rank-phrase mb-0"><%= calories_ranker_phrases(@activity) %></p>
+          </div>
+          <div class="cal-stats-bottom d-flex w-100 h-50 flex-row">
+            <div class="cals-ph h-100 w-50 flex-column d-flex justify-content-center align-items-center">
+              <p class="mb-2"><%= calories_per_hour_calc(@activity) %></p>
+              <p class="mb-0">cals per hour</p>
+            </div>
+            <div class="cals-pm h-100 w-50 flex-column d-flex justify-content-center align-items-center p-2">
+              <p class="mb-2"><%= calories_per_minute_calc(@activity) %></p>
+              <p class="mb-0">cals per min</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

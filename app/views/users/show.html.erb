@@ -7,7 +7,7 @@
     </aside>
     <div class="d-flex flex-column main-column">
       <ul class="float-right profile-quicklinks my-0 d-flex align-items-center">
-        <li class="d-inline"><%= link_to 'Recent Activities', '#' %></li>
+        <li class="d-inline"><%= link_to 'Recent Activities', activity_entries_show_path(@user) %></li>
         <li class="d-inline"><%= link_to 'My Friends', '#' %></li>
         <li class="d-inline"><%= link_to 'My Stats', '#' %></li>
       </ul>
@@ -63,7 +63,9 @@
                   <li>
                     <div class="my-group-name">
                       <div class="profile-widget-group-name mb-2">
-                        <p class="d-inline-block mb-0 recent-activity-name"><%= activity.name %></p>
+                        <p class="d-inline-block mb-0 recent-activity-name">
+                          <%= link_to "#{activity.name}", activities_show_path(activity) %>
+                        </p>
                         <p class="d-inline-block mb-0"> • <%= activity.calories %> cals</p>
                         <p class="d-inline-block mb-0"> • <%= time_converter(activity.amount) %></p>
                         <p class="d-inline-block mb-0"> • <%= time_ago_in_words(activity.created_at) %> ago</p>
@@ -85,7 +87,8 @@
         <% @all_activities.each do |activity| %>
           <li class="d-table">
             <div class='h-100 w-auto all-activities-item mb-3'>
-              <p class='d-inline-block mb-0 w-auto'><%= activity.name %> • </p>
+              <p class='d-inline-block mb-0 mr-1 w-auto'><i class="<%= activity.group_icon %>"></i></p>
+              <p class='d-inline-block mb-0 w-auto'><%= link_to "#{activity.name}", activities_show_path(activity) %> • </p>
               <p class='d-inline-block mb-0 w-auto'><%= activity.created_at.strftime('%B %e') %></p>
             </div>
           </li>

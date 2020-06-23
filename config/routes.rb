@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'groups/show'
   get 'activity_entries/show'
   get 'activities/new'
-  get 'activities/show'
+  get 'activities/show/:id' => "activities#show", as: :activities_show
   get 'users/show'
   root 'users#show'
 

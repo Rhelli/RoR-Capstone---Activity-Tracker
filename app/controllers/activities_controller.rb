@@ -15,11 +15,12 @@ class ActivitiesController < ApplicationController
   end
 
   def show
+    @activity = Activity.find(params[:id])
   end
 
   private
 
   def activity_params
-    params.require(:activity).permit(:name, :amount, :calories, :group_id)
+    params.require(:activity).permit(:id, :name, :amount, :calories, :group_id)
   end
 end

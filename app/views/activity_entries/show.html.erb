@@ -1,9 +1,27 @@
-<header>
-  <h1>My Activities</h1>
-  <p>All your most recent activities</p>
-</header>
-<main>
-  <% @my_activities.each do |activity| %>
-    <li><%= activity.name %></li>
-  <% end %>
+<main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
+  <div class="my-activities-container d-flex justify-content-center align-items-center flex-column p-0 m-0">
+    <header>
+      <h1>My Activities</h1>
+      <p>All your <u>most recent</u> activities</p>
+    </header>
+    <div class="my-activities-list p-4">
+      <ul class="list-unstyled p-0 m-0 w-100">
+        <% @my_activities.each do |activity| %>
+          <li>
+            <div class="activity-list-item d-flex flex-row align-items-center">
+              <div class="d-flex align-items-center icon-title">
+                <p class="mr-4 mb-0 d-flex justify-content-center align-items-center"><i class="<%= activity.group_icon %>"></i></p>
+                <h2 class="d-inline-block"><%= link_to "#{activity.name}", activities_show_path(activity) %></h2>
+              </div>
+              <div class="ml-auto my-activities-stats">
+                <p class="d-inline-block mr-1"><%= activity.calories %> cals • </p>
+                <p class="d-inline-block mr-1"><%= time_converter(activity.amount) %> • </p>
+                <p class="d-inline-block mr-1"><%= time_ago_in_words(activity.created_at) %> ago.</p>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+      </div>
+  </div>
 </main>

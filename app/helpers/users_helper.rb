@@ -10,6 +10,7 @@ module UsersHelper
   end
 
   def quick_stats_dots(count)
+    count = 7 if count > 7
     inactive = '<i class="d-inline-block far fa-circle"></i>'
     active = '<i class="d-inline-block fas fa-circle"></i>'
     active_count = 7 - count
@@ -22,15 +23,5 @@ module UsersHelper
       printer.concat(inactive)
     end
     printer.html_safe
-  end
-
-  def time_converter(mins)
-    hours = mins / 60
-    remainder = mins % 60
-    if hours < 1
-      "#{remainder} mins"
-    else
-      "#{hours}h:#{remainder}m"
-    end
   end
 end
