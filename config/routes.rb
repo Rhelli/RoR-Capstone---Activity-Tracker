@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'memberships/show'
+  get 'memberships/show/:id' => "memberships#show", as: :memberships_show
   get 'groups/new'
   get 'groups/show'
   get 'activity_entries/show'
