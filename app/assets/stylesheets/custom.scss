@@ -1112,11 +1112,16 @@ form {
           align-items: center;
           width: 100%;
           height: auto;
+          margin: 0;
 
           input[type="submit"] {
             width: 80%;
             height: 40px;
           }
+        }
+
+        .leave {
+          border-top: 2px solid #dfdfdf;
         }
       }
 

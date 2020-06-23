@@ -22,4 +22,8 @@ class User < ApplicationRecord
   scope :recent_activities_21, ->(user) { user.activities.where('created_at BETWEEN ? AND ?', Date.today - 21, Date.today - 14) }
   scope :recent_activities_28, ->(user) { user.activities.where('created_at BETWEEN ? AND ?', Date.today - 28, Date.today - 21) }
   scope :undiscovered_groups, ->(user) { Group.all.where('id NOT IN (?)', user.groups.map(&:id))}
+
+  def user_name
+    "#{self.first_name} "+"#{self.last_name}"
+  end
 end

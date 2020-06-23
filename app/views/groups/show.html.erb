@@ -16,12 +16,24 @@
           <div class="d-flex align-item-center h-100 w-100">
             <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :user_id => current_user.id, :group_id => @group.id } %>
           </div>
-          <div class="d-flex align-item-center h-100 w-100">
+          <div class="d-flex leave align-item-center h-100 w-100">
             <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }%>
           </div>
         </div>
       </div>
       <div class="group-info h-100 d-flex flex-column justify-content-start align-items-center m-0 p-0">
+        <div class="w-100">
+          <h3>Team Members</h3>
+          <ul class='list-unstyled w-100'>
+            <% @group_members.each do |member| %>
+              <li class="w-100">
+                <div>
+                  <p><%= member.user_name %></p>
+                </div>
+              </li>
+            <% end %>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
