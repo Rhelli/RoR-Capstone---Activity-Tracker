@@ -890,6 +890,17 @@ form {
 
           .name {
             margin-right: 15px;
+
+            a {
+              color: initial;
+              transition-duration: 0.2s;
+
+              &:hover {
+                color: #DAF7A6;
+                text-decoration: none;
+                transition-duration: 0.15s;
+              }
+            }
           }
         }
 
@@ -1018,3 +1029,103 @@ form {
   }
 }
 
+// GROUPS SHOW PAGE ---------------------------------------------------------------------------//
+.groups-show-container {
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
+  width: 90%;
+  height: 80%;
+  border-radius: 6px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  header {
+    text-align: center;
+
+    h1 {
+      color: #fafbfd;
+      font: 700 48px/48px 'Proxima Nova Bold';
+      margin-top: -20px;
+    }
+
+    p {
+      font: 300 18px/18px 'Proxima Nova Rg';
+      color: #fafbfd;
+      text-align: center;
+    }
+  }
+
+  .group-show-main-card {
+    background-color: #fafbfd;
+    width: 90%;
+    height: 75%;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+
+    .group-bio {
+      width: 25%;
+      border-right: 1px solid #dfdfdf;
+
+      h2 {
+        font: 400 36px/36px 'Proxima Nova Rg', monospace;
+      }
+
+      p {
+        text-align: center;
+        font: 400 18px/20px 'Proxima Nova Rg', monospace;
+      }
+
+      .group-bio-top {
+        border-bottom: 2px solid #dfdfdf;
+
+        .group-icon {
+          background-color: #5fb523;
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+          border: 2px solid #539E1F;
+          -webkit-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+          -moz-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+          box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+
+          svg {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            background-color: #fafbfd;
+            border-radius: 50%;
+            border: 2px solid #539E1F;
+            -webkit-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+            -moz-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+            box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+          }
+        }
+      }
+
+      .group-bio-bottom {
+        form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: auto;
+
+          input[type="submit"] {
+            width: 80%;
+            height: 40px;
+          }
+        }
+      }
+
+    }
+
+    .group-info {
+      width: 75%;
+      border-left: 1px solid #dfdfdf;
+
+    }
+  }
+}
