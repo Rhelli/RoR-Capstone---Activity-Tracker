@@ -1,13 +1,14 @@
 <main class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
   <div class="new-activity-container d-flex justify-content-center align-items-center flex-column">
     <h1>Create A New Activity</h1>
+    <p>Log your latest activities</p>
     <div class="new-activity-form d-flex justify-content-center align-items-center flex-column">
       <%= form_for(@activity) do |f| %>
-        <div class="new-activity-form-fields">
+        <div class="new-activity-form-fields p-4">
 
-          <div class="field">
+          <div class="field first-field">
             <%= f.label :name, 'Title' %><br />
-            <%= f.text_field :name %>
+            <%= f.text_field :name, placeholder: 'Give your workout a title...' %>
           </div>
 
           <div class="field">
@@ -20,12 +21,12 @@
             <%= f.text_field :calories, placeholder: 'How many calories did you burn?' %>
           </div>
 
-          <div class="field">
+          <div class="field last-field mb-0">
             <%= f.label :group_id, 'Exercise Group' %>
             <%= f.collection_select(:group_id, Group.all, :id, :name) %>
           </div>
         </div>          
-        <%= f.submit "Log Activity", class: "new-activity-submit" %>
+        <%= f.submit "Log Activity", class: "submit-btn mb-4" %>
       <% end %>
     </div>
   </div>

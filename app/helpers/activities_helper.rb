@@ -1,11 +1,11 @@
 module ActivitiesHelper
   def calories_ranker_phrases(activity)
     ranked_activities = current_user.activities.all.order(calories: :desc).limit(3).compact
-    if activity.calories > ranked_activities.first.calories
+    if activity.calories >= ranked_activities.first.calories
       'Most Calories Burned In One Session'
-    elsif activity.calories > ranked_activities.second.calories
+    elsif activity.calories >= ranked_activities.second.calories
       '2nd Most Calories Burned In One Session'
-    elsif activity.calories > ranked_activities.last.calories
+    elsif activity.calories >= ranked_activities.last.calories
       '3rd Most Calories Burned In One Session'
     else
       'Practice Makes Perfect! Keep It Up!'
@@ -14,11 +14,11 @@ module ActivitiesHelper
 
   def calories_badges_gen(activity)
     ranked_activities = current_user.activities.all.order(calories: :desc).limit(3).compact
-    if activity.calories > ranked_activities.first.calories
+    if activity.calories >= ranked_activities.first.calories
       'fas fa-trophy gold'
-    elsif activity.calories > ranked_activities.second.calories
+    elsif activity.calories >= ranked_activities.second.calories
       'fas fa-trophy silver'
-    elsif activity.calories > ranked_activities.last.calories
+    elsif activity.calories >= ranked_activities.last.calories
       'fas fa-trophy bronze'
     else
       'fas fa-award award'
