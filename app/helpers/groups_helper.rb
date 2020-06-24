@@ -26,4 +26,9 @@ module GroupsHelper
       'Group Admin'
     end
   end
+
+  def is_member?(user, group)
+    user_groups = user.groups.compact
+    user_groups.include?(group)
+  end
 end

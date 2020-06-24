@@ -12,13 +12,16 @@
           <h2 class="mt-2"><%= @group.name %></h2>
           <p class="px-2"><%= @group.description %></p>
         </div>
-        <div class="group-bio-bottom d-flex flex-column w-100 h-100">
-          <div class="d-flex align-item-center h-100 w-100">
-            <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :user_id => current_user.id, :group_id => @group.id } %>
-          </div>
-          <div class="d-flex leave align-item-center h-100 w-100">
-            <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }%>
-          </div>
+        <div class="group-bio-bottom d-flex flex-column justify-content-start w-100 h-100">
+          <% if is_member?(current_user, @group) %>
+            <div class="d-flex leave align-item-center w-100 my-3">
+              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }%>
+            </div>
+          <% else %>
+            <div class="d-flex align-item-center w-100 my-3">
+              <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :user_id => current_user.id, :group_id => @group.id } %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="group-right-container h-100 d-flex flex-column p-0 m-0">

@@ -10,7 +10,7 @@
           <p class="icon d-flex justify-content-center align-items-center">
             <i class="<%= @activity.group_icon %> mb-1"></i>
           </p>
-          <p><%= @activity.group_name %></p>
+          <p><%= link_to "#{@activity.group_name}", groups_show_path(@activity.group) %></p>
         </div>
         <div class="workout-time w-50 h-100 d-flex justify-content-center align-items-center">
           <p><%= time_converter(@activity.amount) %></p>

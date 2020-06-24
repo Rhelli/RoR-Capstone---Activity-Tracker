@@ -727,7 +727,19 @@ form {
 
 
     p {
-      font-size: 26px;
+      font-size: 28px;
+      font-weight: 600;
+
+      a {
+        color: inherit;
+        transition-duration: 0.2s;
+
+        &:hover {
+          color: #3D699B;
+          text-decoration: none;
+          transition-duration: 0.15s;
+        }
+      }
     }
 
     .icon {
@@ -867,7 +879,9 @@ form {
         }
 
         .group-list-name {
-          font-size: 28px;
+          width: auto;
+          font-size: 26px;
+          line-height: 28px;
           background-color: #5fb523;
           padding: 12px 18px;
           border-radius: 40px;
@@ -889,11 +903,13 @@ form {
           }
 
           .name {
-            margin-right: 15px;
+            tex-align: center;
+            white-space: pre-line;
 
             a {
               color: initial;
               transition-duration: 0.2s;
+              white-space: pre-line;
 
               &:hover {
                 color: #DAF7A6;
@@ -1080,6 +1096,7 @@ form {
 
       .group-bio-top {
         border-bottom: 2px solid #dfdfdf;
+        text-align: center;
 
         .group-icon {
           background-color: #5fb523;
@@ -1121,7 +1138,9 @@ form {
         }
 
         .leave {
-          border-top: 2px solid #dfdfdf;
+          input[type="submit"]{
+            background-color: #C0392B;
+          }
         }
       }
 
