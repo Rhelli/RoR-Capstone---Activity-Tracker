@@ -9,6 +9,8 @@ class Group < ApplicationRecord
   has_many :activity_entries, foreign_key: :group_id
   has_many :activities, through: :activity_entries
 
+  scope :recent_activities, ->(group) { Activity.where('group_id = ? AND created_at >= ?', group.id, Date.today - 6).order(created_at: :desc).limit(5) }
+
   def group_icon
     self.icon.html_safe
   end

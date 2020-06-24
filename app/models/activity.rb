@@ -9,5 +9,6 @@ class Activity < ApplicationRecord
 
   delegate :group_icon, to: :group, allow_nil: false
   delegate :group_name, to: :group, allow_nil: false
+  delegate :author_name, to: :user, allow_nil: false
 
 end

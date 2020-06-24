@@ -9,7 +9,7 @@ module GroupsHelper
     elsif ranked_activities.last.author == user
       'fas fa-trophy bronze'
     elsif creator == user
-      'fas fa-id-badge'
+      'fas fa-id-badge creator'
     end
   end
 

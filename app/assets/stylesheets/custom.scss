@@ -1126,26 +1126,130 @@ form {
       }
 
     }
-
-    .group-info {
+    .group-right-container {
       width: 75%;
-      border-left: 1px solid #dfdfdf;
-      height: 75%;
 
-      .group-member-list {
-        height: 75%;
+      .group-info {
+        border-left: 1px solid #dfdfdf;
+        height: 60%;
+
+        h3 {
+          width: 100%;
+          font-size: 26px;
+          text-align: left;
+          padding-left: 26px;
+        }
+
+        .group-member-list {
+          height: 100%;
+          overflow: hidden;
+          border-bottom: 1px solid #dfdfdf;
+
+          ul {
+            height: 100%;
+            overflow-y: auto;
+
+            .group-member-list-item {
+              border-bottom: 2px solid #dfdfdf;
+              height: 80px;
+
+              p {
+                font-size: 14px;
+                margin-bottom: 0;
+              }
+
+              .user-name {
+                p {
+                  font-size: 26px;
+                  margin-left: 10px;
+                }
+
+                img {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  margin-left: 20px;
+                }
+              }
+
+              .group-badge {
+                width: 120px;
+                text-align: center;
+                background-color: rgba(206, 147, 216, 0.4);
+
+                svg {
+                  width: 30px;
+                  height: 30px;
+                  margin-bottom: 5px;
+                }
+
+                .gold {
+                  color: #F1C40F;
+                }
+
+                .silver {
+                  color: #B2BABB;
+                }
+
+                .bronze {
+                  color: #B9770E;
+                }
+
+                .creator {
+                  color: #673AB7;
+                }
+              }
+
+              .joined {
+                text-align: center;
+                width: 80px;
+              }
+            }
+          }
+        }
+      }
+
+      .group-activities {
+        height: 40%;
+        width: 100%;
         overflow: hidden;
+        border-top: 1px solid #dfdfdf;
+
+        p {
+          margin-bottom: 0;
+        }
 
         ul {
           height: 100%;
-          overflow-y: auto;
+          overflow-y: scroll;
+        }
+        
+        .group-activity-list-item {
+          margin-bottom: 10px;
+          padding: 10px;
+          border-bottom: 1px solid #EBDEF0;
 
-          .group-member-list-item {
-            border-bottom: 2px solid #dfdfdf;
+          .name-author {
+            height: 50px;
+            padding: 8px 14px;
+            background-color: rgba(55,120,194,0.2);
+            border-radius: 8px 8px 8px 0;
 
-            p {
-              margin-bottom: 0;
+            .name {
+              font-size: 18px;
+              font-weight: 400;
             }
+
+            .author {
+              font-size: 14px;
+            }
+          }
+
+          .activity-stats {
+            height: 50px;
+            padding: 8px 14px;
+            background-color: rgba(206, 147, 216, 0.3);
+            border-radius: 8px 8px 0 8px;
           }
         }
       }
