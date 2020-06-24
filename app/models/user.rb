@@ -26,4 +26,8 @@ class User < ApplicationRecord
   def user_name
     "#{self.first_name} "+"#{self.last_name}"
   end
+
+  def user_id
+    self.id
+  end
 end

@@ -7,7 +7,7 @@ class Group < ApplicationRecord
   has_many :memberships
   has_many :users, through: :memberships
   has_many :activity_entries, foreign_key: :group_id
-  has_many :activities, through: :activity_entries=
+  has_many :activities, through: :activity_entries
 
   def group_icon
     self.icon.html_safe

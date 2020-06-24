@@ -12,4 +12,5 @@ class Membership < ApplicationRecord
   scope :my_memberships, ->(user) { where('user_id = ?', user.id).order(created_at: :desc) }
   scope :member_count, ->(group) { where('group_id = ?', group.id).count }
   scope :group_memberships, ->(group) { where('group_id = ?', group.id).order(name: :desc) }
+  
 end

@@ -1130,7 +1130,25 @@ form {
     .group-info {
       width: 75%;
       border-left: 1px solid #dfdfdf;
+      height: 75%;
 
+      .group-member-list {
+        height: 75%;
+        overflow: hidden;
+
+        ul {
+          height: 100%;
+          overflow-y: auto;
+
+          .group-member-list-item {
+            border-bottom: 2px solid #dfdfdf;
+
+            p {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
     }
   }
 }

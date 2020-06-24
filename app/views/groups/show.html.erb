@@ -5,7 +5,7 @@
     </header>
     <div class="group-show-main-card d-flex flex-row">
       <div class="group-bio h-100 d-flex flex-column justify-content-start align-items-center m-0 p-2">
-        <div class=" group-bio-top d-flex flex-column justify-content-start align-items-center p-0">
+        <div class=" group-bio-top w-100 d-flex flex-column justify-content-start align-items-center p-0">
           <div class="group-icon d-flex align-items-center justify-content-center mt-3">
             <i class="<%= @group.icon %>"></i>
           </div>
@@ -22,13 +22,29 @@
         </div>
       </div>
       <div class="group-info h-100 d-flex flex-column justify-content-start align-items-center m-0 p-0">
-        <div class="w-100">
-          <h3>Team Members</h3>
+        <h3>Team Members</h3>
+        <div class="w-100 group-member-list">
           <ul class='list-unstyled w-100'>
             <% @group_members.each do |member| %>
-              <li class="w-100">
-                <div>
-                  <p><%= member.user_name %></p>
+              <li class="w-100 group-member-list-item">
+                <div class="d-flex flex-row w-100 align-items-center">
+                  <div class="d-flex align-items-center justify-content-center mr-3">
+                    <p><%= member.user_name %></p>
+                    <p>• <%= member.id %></p>
+                  </div>
+                  <% if user_badges_gen(member.user, @group) %>
+                    <div class="d-flex flex-column align-items-center justify-content-center mr-3 ml-auto">
+                      <p><i class="<%= user_badges_gen(member.user, @group) %>"></i></p>
+                      <p><%= badges_phrase_gen(member.user, @group) %></p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center mr-3">
+                      <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
+                    </div>
+                  <% else %>
+                    <div class="d-flex align-items-center justify-content-center mr-3 ml-auto">
+                      <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
+                    </div>
+                  <% end %>
                 </div>
               </li>
             <% end %>
