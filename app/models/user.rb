@@ -12,8 +12,8 @@ class User < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, uniqueness: { case_sensitive: false }
 
   has_many :memberships, foreign_key: :user_id, dependent: :destroy
-  has_many :groups, foreign_key: :creator_id, class_name: 'Group'
   has_many :groups, through: :memberships
+  has_many :groups, foreign_key: :creator_id, class_name: 'Group'
   has_many :activities, foreign_key: :author_id, class_name: 'Activity', dependent: :destroy
 
   scope :recent_activities_all, ->(user) { user.activities.where('author_id = ? AND created_at >= ?', user.id, Date.today - 28).order(created_at: :desc) }

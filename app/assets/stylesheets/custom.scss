@@ -637,6 +637,7 @@ form {
 
 // ACTIVITY ENTRIES SHOW PAGE ---------------------------------------------------------------------------//
 .my-activities-container {
+  position: relative;
   width: 90%;
   height: 80%;
   background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(41,90,146,1) 76.9% );
@@ -645,6 +646,33 @@ form {
   -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
   -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
   box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  .new-activity {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 2px solid rgba(256, 256, 256, 0.4);
+    transition-duration: 0.2s;
+
+    &:hover {
+      border: 2px solid #fafbfd;
+      transition-duration: 0.15s;
+
+      a {
+        color: #fafbfd;
+        text-decoration: none;
+        transition-duration: 0.15s;
+      }
+    }
+
+    a {
+      font: 600 18px/18px 'Proxima Nova Rg';
+      color: rgba(256, 256, 256, 0.6);
+      transition-duration: 0.2s;
+    }
+  }
 
   header {
     h1 {
@@ -864,6 +892,7 @@ form {
 
 // MY GROUPS PAGE --------------------------------------------------------------------------------//
 .my-groups-container {
+  position: relative;
   background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
   width: 90%;
   height: 80%;
@@ -872,6 +901,33 @@ form {
   -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
   -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
   box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  .new-group {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 12px 14px;
+    border-radius: 6px;
+    border: 2px solid rgba(256, 256, 256, 0.4);
+    transition-duration: 0.2s;
+
+    &:hover {
+      border: 2px solid #fafbfd;
+      transition-duration: 0.15s;
+
+      a {
+        color: #fafbfd;
+        text-decoration: none;
+        transition-duration: 0.15s;
+      }
+    }
+
+    a {
+      font: 600 18px/18px 'Proxima Nova Rg';
+      color: rgba(256, 256, 256, 0.6);
+      transition-duration: 0.2s;
+    }
+  }
 
   header {
     text-align: center;
@@ -1351,5 +1407,111 @@ form {
         }
       }
     }
+  }
+}
+
+// NEW GROUP PAGE --------------------------------------------------------------------------------//
+.new-group-container {
+  position: relative;
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
+  width: 90%;
+  height: 80%;
+  border-radius: 6px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  text-align: center;
+
+  h1 {
+    color: #fafbfd;
+    font: 700 48px/48px 'Proxima Nova Bold';
+    margin-top: -20px;
+  }
+  
+  p {
+    font: 300 18px/18px 'Proxima Nova Rg';
+    color: #fafbfd;
+    text-align: center;
+  }
+
+  .error-explanation {
+    width: 60%;
+    height: auto;
+    color: #101010;
+  }
+
+  .new-group-form {
+    width: 70%;
+    height: 70%;
+    background: #fafbfd;
+    -webkit-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    border: 1px solid #3C6798;
+    border-radius: 4px;
+    font: 300 20px/20px 'Proxima Nova Rg', monospace;
+
+
+    .new-group-form-fields {
+      label {
+        text-align: left;
+        width: 100%;
+      }
+
+      .field {
+        margin-bottom: 10px;
+
+        input[type="text"] {
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          &::placeholder {
+            color: #7FB3D5;
+          }
+        }
+      }
+
+      .last-field {
+        text-align: center;
+        label {
+          width: auto;
+          font-size: 20px;
+        }
+
+        select {
+          height: 35px;
+          text-align: center;
+          margin-left: 10px;
+          font-size: 14px;
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+        }
+      }
+    }
+
+  .submit-btn {
+    width: 250px;
+    height: 45px;
+    position: relative;
+    color: #fafbfd;
+    text-shadow: 0 0 2px #47881A;
+    transition-duration: 0.2s;
+
+    &:hover {
+      background-color: #87C85A;
+      position: relative;
+      transition-duration: 0.15s;
+    }
+  }
   }
 }
