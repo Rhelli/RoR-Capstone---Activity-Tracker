@@ -15,11 +15,11 @@
         <div class="group-bio-bottom d-flex flex-column justify-content-start w-100 h-100">
           <% if is_member?(current_user, @group) %>
             <div class="d-flex leave align-item-center w-100 my-3">
-              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }%>
+              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? You Can Join Again At Any Time' } %>
             </div>
           <% else %>
-            <div class="d-flex align-item-center w-100 my-3">
-              <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :user_id => current_user.id, :group_id => @group.id } %>
+            <div class="d-flex join align-item-center w-100 my-3">
+              <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :group_id => @group.id } %>
             </div>
           <% end %>
         </div>
@@ -62,7 +62,7 @@
               <li class="group-activity-list-item w-100">
                 <div class="d-flex flex-row justify-content-start align-items-center">
                   <div class="name-author">
-                    <p class="name"><%= activity.name %></p>
+                    <p class="name"><%= link_to "#{activity.name}", activities_show_path(activity) %></p>
                     <p class="author"><%= "#{activity.author.first_name} #{activity.author.last_name}" %></p>
                   </div>
                   <div class="activity-stats d-flex flex-row align-items-center ml-auto">
