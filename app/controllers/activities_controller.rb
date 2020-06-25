@@ -19,6 +19,13 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
   end
 
+  def destroy
+    @activity = Activity.find(params[:id])
+    @activity.destroy
+    flash[:notice] = 'Activity Deleted.'
+    redirect_to users_show_path(current_user)
+  end
+
   private
 
   def activity_params

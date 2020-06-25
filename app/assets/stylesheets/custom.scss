@@ -722,7 +722,33 @@ form {
 }
 
 // ACTIVITIES SHOW PAGE ------------------------------------------------------------------------------------//
+.show-activity {
+  form {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    width: auto;
+  
+    input[type="submit"] {
+      background-color: transparent;
+      width: 80px;
+      border: 2px solid rgba(256, 256, 256, 0.4);
+      text-transform: initial;
+      color: rgba(256, 256, 256, 0.4);
+      transition-duration: 0.2s;
+  
+      &:hover {
+        background-color: transparent;
+        border: 2px solid #fafbfd;
+        color: #fafbfd;
+        transition-duration: 0.15s;
+      }
+    }
+  }
+}
+
 .activities-show-card {
+  position: relative;
   background-color: #fafbfd;
   height: 75%;
   width: 50%;

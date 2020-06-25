@@ -1,9 +1,10 @@
 <main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
-  <div class="my-activities-container d-flex justify-content-center align-items-center flex-column p-0 m-0">
+  <div class="my-activities-container show-activity d-flex justify-content-center align-items-center position-relative flex-column p-0 m-0">
     <header>
       <h1><%= @activity.name %></h1>
       <p>Created <%= time_ago_in_words(@activity.created_at) %> ago.</p>
     </header>
+    <%= button_to 'Delete', { :controller => 'activities', action: 'destroy', :id => @activity.id }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
     <div class="activities-show-card">
       <div class="h-50 w-100 d-flex justify-content-center flex-row align-items-center">
         <div class="group-badge w-50 h-100 d-flex  flex-column justify-content-center align-items-center">
