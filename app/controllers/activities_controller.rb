@@ -8,10 +8,11 @@ class ActivitiesController < ApplicationController
     if @activity.save
       @activity_entry = ActivityEntry.create!(activity_id: @activity.id, group_id: @activity.group_id)
       flash[:notice] = 'Activity Saved.'
+      redirect_to activities_show_path(@activity)
     else
       flash[:alert] = 'An error occurred. Please try again.'
+      redirect_back(fallback_location: root_path)
     end
-    redirect_back(fallback_location: root_path)
   end
 
   def show
