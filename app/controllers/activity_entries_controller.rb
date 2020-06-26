@@ -1,6 +1,6 @@
 class ActivityEntriesController < ApplicationController
   def show
-    @my_activities = current_user.activities.all
+    @my_activities = current_user.activities.all.order(created_at: :desc)
   end
 
   def new

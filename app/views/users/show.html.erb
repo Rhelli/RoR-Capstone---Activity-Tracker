@@ -8,8 +8,8 @@
     <div class="d-flex flex-column main-column">
       <ul class="float-right profile-quicklinks my-0 d-flex align-items-center">
         <li class="d-inline"><%= link_to 'Recent Activities', activity_entries_show_path(@user) %></li>
-        <li class="d-inline"><%= link_to 'My Friends', '#' %></li>
-        <li class="d-inline"><%= link_to 'My Stats', '#' %></li>
+        <li class="d-inline"><%= link_to 'Create Activity', activities_new_path %></li>
+        <li class="d-inline"><%= link_to 'Create Group', groups_new_path %></li>
       </ul>
       <div class="profile-quick-stats d-flex flex-row">
         <div class="profile-activity-counter d-flex justify-content-start align-items-center flex-column mr-1">
@@ -56,7 +56,7 @@
         </div>
         <div class="profile-widget ml-3">
           <div>
-            <div class="profile-widget-activity d-flex justify-content-center align-items-center flex-column pt-1 pr-0">
+            <div class="profile-widget-activity d-flex justify-content-start align-items-center flex-column pt-1 pr-0">
               <h2 class="mr-auto ml-3">Most Recent Activities</h2>
               <ul class="list-unstyled pt-2 w-100 mb-0 pb-0 px-1">
                 <% @recent_activities_all.limit(5).each do |activity| %>
@@ -105,7 +105,7 @@
                 <i class="<%= m.icon %>"></i>
               </div>
               <div class="d-inline-block mb-0 profile-widget-group-name">
-                <p class="mb-0"><%= m.name %></p>
+                <p class="mb-0"><%= link_to "#{m.name}", groups_show_path(m) %></p>
               </div>
             </div>
           </li>

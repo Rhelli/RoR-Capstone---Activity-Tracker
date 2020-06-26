@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'memberships/show'
+  get 'memberships/show/:id' => "memberships#show", as: :memberships_show
   get 'groups/new'
-  get 'groups/show'
+  get 'groups/show/:id' => "groups#show", as: :groups_show
   get 'activity_entries/show'
   get 'activities/new'
   get 'activities/show/:id' => "activities#show", as: :activities_show
@@ -11,4 +11,5 @@ Rails.application.routes.draw do
   devise_for :users
   resources :activities
   resources :groups
+  resources :memberships
 end

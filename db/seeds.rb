@@ -14,27 +14,29 @@ time_of_day = [
   ''
 ]
 
-activity_name_gen = [
-  'Run',
-  'Walk',
-  'Jog',
-  'Swim',
-  'Power-walk',
-  'Kayak',
-  'HIIT Session',
-  'Weightlifting Session',
-  'Cycle',
-  'Spin',
-  'Yoga',
-  'Pilates',
-  'Core Workout',
-  'Calisthenics',
-  'Rowing Session',
-  'Golfing',
-  'Frisbee Session',
-  'WWE Wrestling Championship',
-  'Marathon'
-]
+def activity_name_gen(id)
+  return 'Jog' if id == 3
+  return 'Swim' if id == 4
+  return 'Kayak' if id == 5
+  return 'HIIT Session' if id == 6
+  return 'Weightlifting Session' if id == 7
+  return 'Yoga' if id == 9
+  return 'Pilates' if id == 10
+  return 'Core Workout' if id == 11
+  return 'Calisthenics' if id == 12
+  return 'Rowing Session' if id == 13
+  return 'Golfing' if id == 14
+  return 'Frisbee Session' if id == 15
+  return 'WWE Wrestling Championship' if id == 16
+  return 'Other' if id == 17
+  if id == 1
+    ['Run', 'Marathon'].sample
+  elsif id == 2
+    ['Walk', 'Power-Walk'].sample
+  elsif id == 8
+    ['Spin', 'Cycle'].sample
+  end
+end
 
 adjective_gen = [
   'Easy ',
@@ -73,7 +75,6 @@ group_names = [
   'HIIT',
   'Weight Lifting',
   'Cycling',
-  'Cardio',
   'Yoga',
   'Pilates',
   'Abdominal Workouts',
@@ -84,6 +85,31 @@ group_names = [
   'Wrestling',
   'Other'
 ]
+
+def time_gen(string)
+  if string.include?('Early Morning') || string.include?('Morning') || string.include?('Mid-Morning')
+    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :morning)
+  elsif string.include?('Mid-Day') || string.include?('Early Afternoon') || string.include?('Afternoon')
+    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :afternoon)
+  elsif string.include?('Late Afternoon') || string.include?('Early Evening') || string.include?('Evening') || string.include?('Night Time')
+    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :evening)
+  else
+    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :day)
+  end
+end
+
+def group_icon_match(group_names)
+  return "fas fa-running" if group_names == 'Running' || group_names == 'Jogging'
+  return "fas fa-walking" if group_names == 'Walking'
+  return "fas fa-swimmer" if group_names == 'Swimming'
+  return "fas fa-anchor" if group_names == 'Kayaking' || group_names == 'Rowing'
+  return "fas fa-heartbeat" if group_names == 'HIIT' || group_names == 'Cardio' || group_names == 'Other'
+  return "fas fa-dumbbell" if group_names == 'Weight Lifting'
+  return "fas fa-biking" if group_names == 'Cycling'
+  return "fas fa-spa" if group_names == 'Yoga' || group_names == 'Pilates'
+  return "fas fa-burn" if group_names == 'Abdominal Workouts' || group_names == 'Calisthenics' || group_names == 'Extreme Frisbee' || group_names == 'Wrestling'
+  return "fas fa-golf-ball" if group_names == 'Golf'
+end
 
 User.create!(
   first_name: 'Jimbo',
@@ -107,52 +133,7 @@ User.create!(
   )
 end
 
-def time_gen(string)
-  if string.include?('Early Morning') || string.include?('Morning') || string.include?('Mid-Morning')
-    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :morning)
-  elsif string.include?('Mid-Day') || string.include?('Early Afternoon') || string.include?('Afternoon')
-    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :afternoon)
-  elsif string.include?('Late Afternoon') || string.include?('Early Evening') || string.include?('Evening') || string.include?('Night Time')
-    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :evening)
-  else
-    return Faker::Time.between_dates(from: Date.today - 30, to: Date.today, period: :day)
-  end
-end
-
-User.all.each do |u|
-  10.times do
-    name_gen = adjective_gen.sample + time_of_day.sample + activity_name_gen.sample
-    name = name_gen.to_s
-    amount = rand(10..260)
-    calories = rand(10..1200)
-    created_at = time_gen(name)
-    updated_at = created_at
-    author_id = u.id
-    Activity.create!(
-      name: name,
-      amount: amount,
-      calories: calories,
-      created_at: created_at,
-      updated_at: updated_at,
-      author_id: author_id
-    )
-  end
-end
-
-def group_icon_match(group_names)
-  return "fas fa-running" if group_names == 'Running' || group_names == 'Jogging'
-  return "fas fa-walking" if group_names == 'Walking'
-  return "fas fa-swimmer" if group_names == 'Swimming'
-  return "fas fa-anchor" if group_names == 'Kayaking' || group_names == 'Rowing'
-  return "fas fa-heartbeat" if group_names == 'HIIT' || group_names == 'Cardio' || group_names == 'Other'
-  return "fas fa-dumbbell" if group_names == 'Weight Lifting'
-  return "fas fa-biking" if group_names == 'Cycling'
-  return "fas fa-spa" if group_names == 'Yoga' || group_names == 'Pilates'
-  return "fas fa-burn" if group_names == 'Abdominal Workouts' || group_names == 'Calisthenics' || group_names == 'Extreme Frisbee' || group_names == 'Wrestling'
-  return "fas fa-golf-ball" if group_names == 'Golf'
-end
-
-18.times do |i|
+17.times do |i|
   name = group_names[i]
   created_at = Faker::Time.between_dates(from: Date.today - 200, to: Date.today - 150, period: :day)
   updated_at = created_at
@@ -165,10 +146,16 @@ end
     creator_id: creator_id,
     icon: group_icon_match(name)
   )
+  Membership.create!(
+    group_id: i + 1,
+    user_id: creator_id,
+    created_at: created_at,
+    updated_at: updated_at
+  )
 end
 
 User.all.each do |u|
-  group_id_array = (1..18).to_a
+  group_id_array = (1..17).to_a
   4.times do
     sample = group_id_array.sample
     group_id = sample
@@ -183,30 +170,32 @@ User.all.each do |u|
   end
 end
 
-def group_match(object)
-  return 1 if object.name.include?('Run') || object.name.include?('Marathon')
-  return 2 if object.name.include?('Walk') || object.name.include?('Power-walk')
-  return 3 if object.name.include?('Jog')
-  return 4 if object.name.include?('Swim')
-  return 5 if object.name.include?('Kayak')
-  return 6 if object.name.include?('HIIT Session')
-  return 7 if object.name.include?('Weightlifting Session')
-  return 8 if object.name.include?('Cycle')
-  return 9 if object.name.include?('Spin')
-  return 10 if object.name.include?('Yoga')
-  return 11 if object.name.include?('Pilates')
-  return 12 if object.name.include?('Core Workout')
-  return 13 if object.name.include?('Calisthenics')
-  return 14 if object.name.include?('Rowing Session')
-  return 15 if object.name.include?('Golfing')
-  return 16 if object.name.include?('Frisbee Session')
-  return 17 if object.name.include?('WWE Wresting Championship')
-  return 18
+User.all.each do |u|
+  u.memberships.each do |i|
+    4.times do
+      name_gen = adjective_gen.sample + time_of_day.sample + activity_name_gen(i.group_id)
+      name = name_gen.to_s
+      amount = rand(10..260)
+      calories = rand(10..1200)
+      created_at = time_gen(name)
+      updated_at = created_at
+      author_id = u.id
+      Activity.create!(
+        name: name,
+        amount: amount,
+        calories: calories,
+        created_at: created_at,
+        updated_at: updated_at,
+        author_id: author_id,
+        group_id: i.group_id
+      )
+    end
+  end
 end
 
 Activity.all.each do |a|
   activity_id = a.id
-  group_id = group_match(a)
+  group_id = a.group_id
   created_at = a.created_at
   updated_at = created_at
   ActivityEntry.create!(

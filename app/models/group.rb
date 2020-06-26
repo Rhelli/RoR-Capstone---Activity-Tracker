@@ -4,10 +4,12 @@ class Group < ApplicationRecord
   validates :description, length: { maximum: 80 }, allow_blank: true
 
   belongs_to :creator, class_name: 'User'
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
   has_many :activity_entries, foreign_key: :group_id
   has_many :activities, through: :activity_entries
+
+  scope :recent_activities, ->(group) { Activity.where('group_id = ? AND created_at >= ?', group.id, Date.today - 6).order(created_at: :desc).limit(5) }
 
   def group_icon
     self.icon.html_safe
@@ -15,5 +17,17 @@ class Group < ApplicationRecord
 
   def group_name
     self.name
+  end
+
+  def group_description
+    self.description
+  end
+
+  def group_age
+    self.created_at
+  end
+
+  def group_id
+    self.id
   end
 end

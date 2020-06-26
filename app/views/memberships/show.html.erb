@@ -1,2 +1,69 @@
-<h1>Memberships#show</h1>
-<p>Find me in app/views/memberships/show.html.erb</p>
+<main class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+  <div class="my-groups-container d-flex justify-content-center align-items-center flex-column">
+    <div class="new-group">
+      <%= link_to 'Create A New Group', new_group_path %>  
+    </div>
+    <header>    
+      <h1>My Groups</h1>
+      <p>All your active group memberships</p>
+    </header>
+    <div class="my-groups-main-card d-flex flex-row">
+      <div class="my-groups-list h-100 d-flex flex-column justify-content-start align-items-start">
+        <ul class="list-unstyled w-100 py-2">
+          <% @my_memberships.each do |membership| %>
+            <li>
+              <div class="group-list-item d-flex flex-row align-items-center">
+                <div class="h-100 group-list-name d-flex align-items-center">
+                  <p class="icon d-inline-flex justify-content-center align-items-center"><i class="<%= membership.group_icon %>"></i></p>
+                  <p class="name d-inline-block"><%= link_to "#{membership.group_name}", groups_show_path(membership.group) %></p>
+                </div>
+                <div class=" group-list-stats ml-auto h-100 d-flex flex-row">
+                  <div class="group-list-item-info first d-flex flex-column justify-content-center align-items-center">
+                    <p class="stat-main"><%= Membership.member_count(membership.group) %></p>
+                    <p>Members</p>
+                  </div>
+                  <div class="group-list-item-info second d-flex flex-column justify-content-center align-items-center">
+                    <p class="stat-main"><%= ActivityEntry.recent_group_activity(membership.group) %></p>
+                    <% if ActivityEntry.recent_group_activity(membership.group) > 0 %>
+                      <p class="recent">Recent Activities<i class="fas fa-bolt"></i></p>
+                    <% else %>
+                      <p>Recent Activities</p>
+                    <% end %>
+                  </div>
+                  <div class="group-list-item-info third d-flex flex-column justify-content-center align-items-center">
+                    <p class="stat-main time"><%= time_ago_in_words(membership.group_age) %></p>
+                    <p>old</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="my-groups-join h-100 d-flex flex-column justify-content-center align-items-start py-3 px-2">
+        <h2 class="w-100">Suggested Groups</h2>
+        <ul class="list-unstyled w-100">
+          <% @non_memberships.each do |non_mem| %>
+            <li>
+              <div class="non-member-group d-flex flex-row align-items-center">
+                <div class="group-name-cont">
+                  <p class="group-name"><%= link_to "#{non_mem.group_name}", groups_show_path(non_mem) %></p>
+                </div>
+                <div class="d-flex flex-row ml-auto sug-group-stat">
+                  <div class="d-flex mem-count align-items-center justify-content-center flex-column">
+                    <p><%= Membership.member_count(non_mem) %></p>
+                    <p>members</p>
+                  </div>
+                  <div class="d-flex new-act align-items-center justify-content-center flex-column">
+                    <p><%= ActivityEntry.recent_group_activity(non_mem) %></p>
+                    <p>new activities</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
