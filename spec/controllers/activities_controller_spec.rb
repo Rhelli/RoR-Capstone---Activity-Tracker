@@ -27,6 +27,12 @@ RSpec.describe ActivitiesController, type: :controller do
       expect(merry.activities.count).to eq(1)
     end
 
+    it 'creates a corresponding activity entry record upon activity creation' do
+      expect(ActivityEntry.all.count).to eq(0)
+      create_activity
+      expect(ActivityEntry.all.count).to eq(1)
+    end
+
     it 'displays a flash message and redirects on successful activity creation' do
       create_activity
       expect(response).to have_http_status(:redirect)
@@ -57,6 +63,22 @@ RSpec.describe ActivitiesController, type: :controller do
         calories: 120,
         group_id: group.id
       )
+    end
+  end
+
+  context 'destroy activities' do
+    it 'destroys an activity given the correct parameters' do
+      create_activity
+      expect(merry.activities.count).to eq(1)
+      post :destroy, params: { id: '1' }
+      expect(merry.activities.count).to eq(0)
+    end
+
+    it 'displays a flash message and redirects upon deletion' do
+      create_activity
+      post :destroy, params: { id: '1' }
+      expect(response).to have_http_status(:redirect)
+      expect(flash).to be_present
     end
   end
 end
