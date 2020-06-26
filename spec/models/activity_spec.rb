@@ -55,9 +55,9 @@ RSpec.describe Activity, type: :model do
       expect(x.macro).to eq(:has_one)
     end
 
-    it 'has many groups' do
-      x = Activity.reflect_on_association(:groups)
-      expect(x.macro).to eq(:has_many)
+    it 'has one group' do
+      x = Activity.reflect_on_association(:group)
+      expect(x.macro).to eq(:has_one)
     end
 
     it 'belongs to an author' do
