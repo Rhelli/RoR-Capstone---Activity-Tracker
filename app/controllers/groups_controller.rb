@@ -22,6 +22,13 @@ class GroupsController < ApplicationController
     @my_groups = Membership.my_memberships(current_user)
   end
 
+  def destroy
+    @group = Group.find(params[:id])
+    @group.destroy
+    flash[:notice] = "The group ,#{@group.name}, has been deleted."
+    redirect_to users_show_path(current_user)
+  end
+
   private
 
   def group_params

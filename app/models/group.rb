@@ -4,7 +4,7 @@ class Group < ApplicationRecord
   validates :description, length: { maximum: 80 }, allow_blank: true
 
   belongs_to :creator, class_name: 'User'
-  has_many :memberships
+  has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
   has_many :activity_entries, foreign_key: :group_id
   has_many :activities, through: :activity_entries

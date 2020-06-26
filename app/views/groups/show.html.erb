@@ -22,6 +22,11 @@
               <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :group_id => @group.id } %>
             </div>
           <% end %>
+          <% if is_creator?(@group, current_user) %>
+            <div class="group-delete-button">
+              <%= button_to 'Delete Group', { :controller => 'groups', action: 'destroy', :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? This Action Cannot Be Undone.'} %>
+            </div>
+          <% end %>
         </div>
       </div>
       <div class="group-right-container h-100 d-flex flex-column p-0 m-0">

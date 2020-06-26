@@ -689,7 +689,7 @@ form {
   }
 
   .my-activities-list {
-    width: 80%;
+    width: 90%;
     height: 70%;
     background-color: #fafbfd;
     border: 1px solid #3C6798;
@@ -719,11 +719,16 @@ form {
           }
           
           h2 {
+            max-width: 500px;
             margin-bottom: 0;
-            font-size: 26px;
+            font-size: 23px;
             font-weight: 400;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
 
             a {
+              width: 100%;
               color: inherit;
               text-decoration: none;
               transition-duration: 0.2s;
@@ -731,6 +736,29 @@ form {
               &:hover {
                 color: #5fb523;
                 transition-duration: 0.2s;
+              }
+            }
+          }
+        }
+
+        .activity-list-delete {
+          form {
+            width: auto;
+
+            input[type="submit"] {
+              text-transform: initial;
+              width: auto;
+              background-color: transparent;
+              border: 2px solid #F5B7B1;
+              border-radius: 6px;
+              padding: 8px 10px;
+              color: #F5B7B1;
+              transition-duration: 0.2s;
+
+              &:hover {
+                border: 2px solid #D98880;
+                color: #D98880;
+                transition-duration: 0.15s;
               }
             }
           }
@@ -947,7 +975,7 @@ form {
 
   .my-groups-main-card {
     background-color: #fafbfd;
-    width: 90%;
+    width: 92%;
     height: 75%;
     border-radius: 4px;
     -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
@@ -1030,6 +1058,10 @@ form {
             .stat-main {
               font-size: 24px;
               margin-bottom: 5px;
+            }
+
+            .time {
+              font-size: 16px;
             }
 
             .recent {
@@ -1262,6 +1294,26 @@ form {
               -webkit-box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
               -moz-box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
               box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
+            }
+          }
+        }
+
+        .group-delete-button {
+          input[type="submit"] {
+            margin-top: 10px;
+            font-size: 14px;
+            width: auto;
+            background: transparent;
+            border: 2px solid #C0392B;
+            color: #C0392B;
+            text-transform: initial;
+            transition-duration: 0.2s;
+
+            &:hover {
+              background-color: #f00;
+              color: #fafbfd;
+              border: 2px solid #f00;
+              transition-duration: 0.15s;
             }
           }
         }

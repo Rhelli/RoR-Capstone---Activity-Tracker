@@ -1,35 +1,43 @@
 module GroupsHelper
   def user_badges_gen(user, group)
-    ranked_activities = group.activities.limit(3).order(calories: :desc).compact
-    creator = group.creator
-    if ranked_activities.first.author == user
-      'fas fa-trophy gold'
-    elsif ranked_activities.second.author == user
-      'fas fa-trophy silver'
-    elsif ranked_activities.last.author == user
-      'fas fa-trophy bronze'
-    elsif creator == user
-      'fas fa-id-badge creator'
+    if group.activities.count >= 3
+      ranked_activities = group.activities.limit(3).order(calories: :desc).compact
+      creator = group.creator
+      if ranked_activities.first.author == user
+        'fas fa-trophy gold'
+      elsif ranked_activities.second.author == user
+        'fas fa-trophy silver'
+      elsif ranked_activities.last.author == user
+        'fas fa-trophy bronze'
+      elsif creator == user
+        'fas fa-id-badge creator'
+      end
     end
   end
 
   def badges_phrase_gen(user, group)
-    ranked_activities = group.activities.limit(3).order(calories: :desc).compact
-    creator = group.creator
-    if ranked_activities.first.author == user
-      'Most Cals Burned'
-    elsif ranked_activities.second.author == user
-      '2nd Most Cals Burned'
-    elsif ranked_activities.last.author == user
-      '3rd Most Cals Burned'
-    elsif creator == user
-      'Group Admin'
+    if group.activities.count >= 3
+      ranked_activities = group.activities.limit(3).order(calories: :desc).compact
+      creator = group.creator
+      if ranked_activities.first.author == user
+        'Most Cals Burned'
+      elsif ranked_activities.second.author == user
+        '2nd Most Cals Burned'
+      elsif ranked_activities.last.author == user
+        '3rd Most Cals Burned'
+      elsif creator == user
+        'Group Admin'
+      end
     end
   end
 
   def is_member?(user, group)
     user_groups = user.groups.compact
     user_groups.include?(group)
+  end
+
+  def is_creator?(group, user)
+    group.creator == user
   end
 
   def group_icon_gen(type)
@@ -146,6 +154,6 @@ module GroupsHelper
         'fas fa-spa'
       when 'Other'
         'fas fa-burn'
-      end
     end
+  end
 end
