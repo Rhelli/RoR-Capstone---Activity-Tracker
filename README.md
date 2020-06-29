@@ -5,7 +5,7 @@
 
 
 <h3 align='center'>  
-    An Straightforward Activity Tracker with Groups, Memberships, Stats and KOMs
+    An Activity Tracker with Groups, Memberships, Stats and KOMs
 </h3>
 <p align="center">
     <br />
