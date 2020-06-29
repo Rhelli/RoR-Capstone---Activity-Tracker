@@ -7,7 +7,7 @@
     </aside>
     <div class="d-flex flex-column main-column">
       <ul class="float-right profile-quicklinks my-0 d-flex align-items-center">
-        <li class="d-inline"><%= link_to 'Recent Activities', activity_entries_show_path(@user) %></li>
+        <li class="d-inline"><%= link_to 'Recent Activities', activity_entries_index_path %></li>
         <li class="d-inline"><%= link_to 'Create Activity', activities_new_path %></li>
         <li class="d-inline"><%= link_to 'Create Group', groups_new_path %></li>
       </ul>
@@ -99,7 +99,7 @@
     <h2 class="pl-4 pt-2 mb-1">My Groups</h2>
       <ul class="list-unstyled my-groups-list px-1">
         <% @my_groups.each do |m| %>
-          <li class="d-inline-block">
+          <li class="d-inline-block mb-2 mr-3">
             <div class="my-group-name mb-2 d-flex align-items-center">
               <div class="d-inline-block profile-widget-icon">
                 <i class="<%= m.icon %>"></i>
