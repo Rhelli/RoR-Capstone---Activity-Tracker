@@ -15,7 +15,7 @@
         <div class="group-bio-bottom d-flex flex-column justify-content-start w-100 h-100">
           <% if is_member?(current_user, @group) %>
             <div class="d-flex leave align-item-center w-100 my-3">
-              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :user_id => current_user.id, :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? You Can Join Again At Any Time' } %>
+              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? You Can Join Again At Any Time' } %>
             </div>
           <% else %>
             <div class="d-flex join align-item-center w-100 my-3">

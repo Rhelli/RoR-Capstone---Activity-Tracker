@@ -32,8 +32,8 @@ module GroupsHelper
   end
 
   def is_member?(user, group)
-    user_groups = user.groups.compact
-    user_groups.include?(group)
+    user_memberships = user.memberships.map(&:group_id)
+    user_memberships.include?(group.id)
   end
 
   def is_creator?(group, user)

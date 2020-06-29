@@ -40,6 +40,9 @@ gem 'hirb'
 # Font Awesome for Font Icons
 gem 'font_awesome5_rails'
 
+# Will Paginate For Long Lists
+gem 'will_paginate'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
@@ -57,6 +60,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rspec-rails'
   gem 'rubocop'
+  gem 'bullet'
 end
 
 group :test do
@@ -68,6 +72,7 @@ group :test do
 
   gem 'database_cleaner-active_record'
   gem 'rspec'
+  gem 'rails-controller-testing'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

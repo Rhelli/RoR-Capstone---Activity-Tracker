@@ -1,5 +1,5 @@
 class ActivityEntriesController < ApplicationController
-  def show
+  def index
     @my_activities = current_user.activities.all.order(created_at: :desc)
   end
 
