@@ -1,0 +1,14 @@
+<ul class="list-unstyled my-groups-list px-1">
+  <% @my_groups.each do |m| %>
+    <li class="d-inline-block mb-2 mr-3">
+      <div class="my-group-name mb-2 d-flex align-items-center">
+        <div class="d-inline-block profile-widget-icon">
+          <i class="<%= m.icon %>"></i>
+        </div>
+        <div class="d-inline-block mb-0 profile-widget-group-name">
+          <p class="mb-0"><%= link_to "#{m.name}", groups_show_path(m) %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

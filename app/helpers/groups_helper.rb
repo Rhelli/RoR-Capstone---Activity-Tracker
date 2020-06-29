@@ -1,7 +1,7 @@
 module GroupsHelper
   def user_badges_gen(user, group)
     if group.activities.count >= 3
-      ranked_activities = group.activities.limit(3).order(calories: :desc).compact
+      ranked_activities = group.activities.includes([:author]).limit(3).order(calories: :desc).compact
       creator = group.creator
       if ranked_activities.first.author == user
         'fas fa-trophy gold'
@@ -17,7 +17,7 @@ module GroupsHelper
 
   def badges_phrase_gen(user, group)
     if group.activities.count >= 3
-      ranked_activities = group.activities.limit(3).order(calories: :desc).compact
+      ranked_activities = group.activities.includes([:author]).limit(3).order(calories: :desc).compact
       creator = group.creator
       if ranked_activities.first.author == user
         'Most Cals Burned'

@@ -1,0 +1,38 @@
+<div class="quick-stats-weekly-overview w-100 d-flex">
+  <div class="quick-stats-weeks">
+    <div>
+      <p><%= (Date.today - 7).strftime('%B %e') %></p>
+    </div>
+    <div>
+      <p><%= (Date.today - 14).strftime('%B %e') %></p>
+    </div>
+    <div>
+      <p><%= (Date.today - 21).strftime('%B %e') %></p>
+    </div>
+    <div>
+      <p><%= (Date.today - 28).strftime('%B %e') %></p>
+    </div>
+  </div>
+  <div class="quick-stats-dots">
+    <div>
+      <p class="d-flex justify-content-start align-items-start h-100">
+        <%= quick_stats_dots(@recent_activities_7.count)%>
+      </p>
+    </div>
+    <div>
+      <p class="d-flex justify-content-start align-items-start h-100">
+        <%= quick_stats_dots(@recent_activities_14.count)%>
+      </p>
+    </div>
+    <div>
+      <p class="d-flex justify-content-start align-items-start h-100">
+        <%= quick_stats_dots(@recent_activities_21.count)%>
+      </p>
+    </div>
+    <div>
+      <p class="d-flex justify-content-start align-items-start h-100">
+        <%= quick_stats_dots(@recent_activities_28.count)%>
+      </p>
+    </div>
+  </div>
+</div>
