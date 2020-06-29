@@ -21,16 +21,17 @@
 </p>
 
 
-## Table of Contents
-  - [The Project Brief](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-project-brief)
-  - [The Nitty Gritty](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-the-nitty-gritty)
-  - [Tools & Technology Used](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-tools--technology-used)
-  - [Setup & Use](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-setup--use)
-  - [Showcase](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-showcase)
-  - [Contributions, Issues and Forking](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-contributions-issues-and-forking)
-  - [Creator](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-creator)
-  - [Show Your Support!](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#-show-your-support)
-  - [Licensing](https://github.com/Rhelli/StayInTouch-Social-Media/tree/release/0.1.0#%EF%B8%8F-licensing)
+## 📑 Table of Contents
+  - [The Project Brief](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-the-project-brief)
+  - [The Nitty Gritty](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#%EF%B8%8F-the-nitty-gritty)
+  - [Tools & Technology Used](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-tools--technology-used)
+  - [Setup & Use](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-setup--use)
+  - [Showcase](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-feature-previews)
+  - [Contributions, Issues and Forking](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#%EF%B8%8F-contributions-issues-and-forking)
+  - [Creator](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-creator)
+  - [Show Your Support!](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#-show-your-support)
+  - [Credit & Acknowledgements](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#credits--acknowledgements)
+  - [Licensing](https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/tree/release/0.1.0#%EF%B8%8F-licensing)
 
 
 ## 🔰 The Project Brief
@@ -143,7 +144,7 @@ Rory Hellier - [Github](https://github.com/Rhelli)
 ## 🖐🏼 Show Your Support!
 Give a ⭐️ if you like this project!
 
-## Credits & Acknowledgements
+## 🍻 Credits & Acknowledgements
 The original design specifications and influence for this project are drawn from [Gregoire Vella's Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=) design on Behance.
 
 ## ⚖️ Licensing
