@@ -12,73 +12,18 @@
           <h2 class="mt-2"><%= @group.name %></h2>
           <p class="px-2"><%= @group.description %></p>
         </div>
-        <div class="group-bio-bottom d-flex flex-column justify-content-start w-100 h-100">
-          <% if is_member?(current_user, @group) %>
-            <div class="d-flex leave align-item-center w-100 my-3">
-              <%= button_to 'Leave Group', { :controller => 'memberships', action: 'destroy', :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? You Can Join Again At Any Time' } %>
-            </div>
-          <% else %>
-            <div class="d-flex join align-item-center w-100 my-3">
-              <%= button_to 'Join Group', { :controller => 'memberships', action: 'create', :group_id => @group.id } %>
-            </div>
-          <% end %>
-          <% if is_creator?(@group, current_user) %>
-            <div class="group-delete-button">
-              <%= button_to 'Delete Group', { :controller => 'groups', action: 'destroy', :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? This Action Cannot Be Undone.'} %>
-            </div>
-          <% end %>
-        </div>
+        <%= render 'groups/group_buttons' %>
       </div>
       <div class="group-right-container h-100 d-flex flex-column p-0 m-0">
         <div class="group-info w-100 d-flex flex-column justify-content-start align-items-center m-0 p-0">
           <h3 class="p-0 pl-3 m-0 w-100">Team Members</h3>
           <div class="w-100 group-member-list">
-            <ul class='list-unstyled w-100'>
-              <% @group_members.each do |member| %>
-                <li class="w-100 group-member-list-item p-0 m-0">
-                  <div class="list-content d-flex flex-row w-100 h-100 align-items-center">
-                    <div class="user-name d-flex h-100 align-items-center justify-content-center mr-3">
-                      <%= gravatar_for(member.user) %>
-                      <p><%= member.user_name %></p>
-                    </div>
-                    <% if user_badges_gen(member.user, @group) %>
-                      <div class="group-badge d-flex h-100 flex-column align-items-center justify-content-center mr-3 ml-auto">
-                        <p><i class="<%= user_badges_gen(member.user, @group) %>"></i></p>
-                        <p><%= badges_phrase_gen(member.user, @group) %></p>
-                      </div>
-                      <div class="joined d-flex h-100 align-items-center justify-content-center mr-3">
-                        <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
-                      </div>
-                    <% else %>
-                      <div class="joined d-flex h-100 align-items-center justify-content-center mr-3 ml-auto">
-                        <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
-                      </div>
-                    <% end %>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
+            <%= render 'groups/group_members' %>
           </div>
         </div>
         <div class="group-activities w-100 d-flex flex-column align-items-center justify-content-start p-0 m-0">
           <h3 class="w-100 justify-text-left p-1 ml-4 mb-0">New Activities</h3>
-          <ul class="list-unstyled p-0 m-0 w-100">
-            <% @group_activities.each do |activity| %>
-              <li class="group-activity-list-item w-100">
-                <div class="d-flex flex-row justify-content-start align-items-center">
-                  <div class="name-author">
-                    <p class="name"><%= link_to "#{activity.name}", activities_show_path(activity) %></p>
-                    <p class="author"><%= "#{activity.author.first_name} #{activity.author.last_name}" %></p>
-                  </div>
-                  <div class="activity-stats d-flex flex-row align-items-center ml-auto">
-                    <p class="mr-2"><%= time_converter(activity.amount) %> • </p>
-                    <p class="mr-2"><%= activity.calories %> cals • </p>
-                    <p><%= time_ago_in_words(activity.created_at)%> ago</p>
-                  </div>
-                </div>
-              </li>
-            <% end %>
-          </ul>
+          <%= render 'groups/group_activities' %>
         </div>
       </div>
     </div>

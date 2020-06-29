@@ -1,0 +1,17 @@
+<ul class="list-unstyled p-0 m-0 w-100">
+  <% @group_activities.each do |activity| %>
+    <li class="group-activity-list-item w-100">
+      <div class="d-flex flex-row justify-content-start align-items-center">
+        <div class="name-author">
+          <p class="name"><%= link_to "#{activity.name}", activities_show_path(activity) %></p>
+          <p class="author"><%= "#{activity.author.first_name} #{activity.author.last_name}" %></p>
+        </div>
+        <div class="activity-stats d-flex flex-row align-items-center ml-auto">
+          <p class="mr-2"><%= time_converter(activity.amount) %> • </p>
+          <p class="mr-2"><%= activity.calories %> cals • </p>
+          <p><%= time_ago_in_words(activity.created_at)%> ago</p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+</ul>

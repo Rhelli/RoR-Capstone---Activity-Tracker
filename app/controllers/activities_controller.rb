@@ -17,6 +17,7 @@ class ActivitiesController < ApplicationController
 
   def show
     @activity = Activity.find(params[:id])
+    @my_groups = Membership.my_memberships(current_user)
   end
 
   def destroy

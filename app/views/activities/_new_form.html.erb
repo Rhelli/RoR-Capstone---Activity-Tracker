@@ -15,7 +15,7 @@
       </div>
       <div class="field last-field mb-0">
         <%= f.label :group_id, 'Exercise Group' %>
-        <%= f.collection_select(:group_id, current_user.groups, :id, :name) %>
+        <%= f.collection_select(:group_id, Membership.my_memberships(current_user), :group_id, :group_name) %>
       </div>
     </div>          
     <%= f.submit "Log Activity", class: "submit-btn mb-4" %>

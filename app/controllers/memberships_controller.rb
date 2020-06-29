@@ -19,7 +19,7 @@ class MembershipsController < ApplicationController
   end
 
   def destroy
-    @membership = current_user.memberships.find_by(params[:group_id])
+    @membership = Membership.find_by(membership_params)
     @membership.destroy
     flash[:notice] = 'Membership terminated. You can join again at any time!'
     redirect_back(fallback_location: root_path)
