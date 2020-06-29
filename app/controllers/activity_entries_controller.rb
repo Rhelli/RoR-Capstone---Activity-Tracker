@@ -1,6 +1,6 @@
 class ActivityEntriesController < ApplicationController
   def index
-    @my_activities = current_user.activities.all.order(created_at: :desc)
+    @my_activities = current_user.activities.all.includes([:group]).order(created_at: :desc)
   end
 
   def new
