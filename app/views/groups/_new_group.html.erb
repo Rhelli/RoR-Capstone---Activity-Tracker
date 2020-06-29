@@ -1,0 +1,76 @@
+<div class="new-group-form d-flex justify-content-center align-items-center flex-column">
+  <%= form_for(@group) do |f| %>
+    <div class="new-group-form-fields p-4">
+      <div class="field first-field">
+        <%= f.label :name, 'Name' %><br />
+        <%= f.text_field :name, placeholder: 'Give your Group a Name...' %>
+      </div>
+      <div class="field">
+        <%= f.label :description, 'Description' %><br />
+        <%= f.text_field :description, placeholder: 'What is this group about?' %>
+      </div>
+      <div class="field last-field mb-0">
+        <%= f.label :icon, 'Fitness Type' %>
+        <%= f.select(:icon, options_for_select([
+          ['Athletics', group_icon_gen('Athletics')],
+          ['American Football', group_icon_gen('American Football')],
+          ['Archery', group_icon_gen('Archery')],
+          ['Badminton', group_icon_gen('Badminton')],
+          ['Ballet', group_icon_gen('Ballet')],
+          ['Baseball', group_icon_gen('Baseball')],
+          ['Basketball', group_icon_gen('Basketball')],
+          ['BJJ', group_icon_gen('BJJ')],
+          ['Bodybuilding', group_icon_gen('Bodybuilding')],
+          ['Boxing', group_icon_gen('Boxing')],
+          ['BMX', group_icon_gen('BMX')],
+          ['Calisthenics', group_icon_gen('Calisthenics')],
+          ['Canoeing', group_icon_gen('Canoeing')],
+          ['Cardio', group_icon_gen('Cardio')],
+          ['Crossfit', group_icon_gen('Crossfit')],
+          ['Cycling', group_icon_gen('Cycling')],
+          ['Diving', group_icon_gen('Diving')],
+          ['Equestrian', group_icon_gen('Equestrian')],
+          ['Fencing', group_icon_gen('Fencing')],
+          ['Fitness Class', group_icon_gen('Fitness Class')],
+          ['Football', group_icon_gen('Football')],
+          ['Golf', group_icon_gen('Golf')],
+          ['Gymnastics', group_icon_gen('Gymnastics')],
+          ['Hockey', group_icon_gen('Hockey')],
+          ['Karate', group_icon_gen('Karate')],
+          ['Jogging', group_icon_gen('Jogging')],
+          ['Kayaking', group_icon_gen('Kayaking')],
+          ['Kung-Fu', group_icon_gen('Kung-Fu')],
+          ['MMA', group_icon_gen('MMA')],
+          ['Pole Dancing', group_icon_gen('Pole Dancing')],
+          ['Powerlifting', group_icon_gen('Powerlifting')],
+          ['Pilates', group_icon_gen('Pilates')],
+          ['Rock Climbing', group_icon_gen('Rock Climbing')],
+          ['Rowing', group_icon_gen('Rowing')],
+          ['Rugby', group_icon_gen('Rugby')],
+          ['Running', group_icon_gen('Running')],
+          ['Skateboarding', group_icon_gen('Skateboarding')],
+          ['Skating', group_icon_gen('Skating')],
+          ['Skiing', group_icon_gen('Skiing')],
+          ['Squash', group_icon_gen('Squash')],
+          ['Snowboarding', group_icon_gen('Snowboarding')],
+          ['Stretching', group_icon_gen('Stretching')],
+          ['Sumo', group_icon_gen('Sumo')],
+          ['Surfing', group_icon_gen('Surfing')],
+          ['Swimming', group_icon_gen('Swimming')],
+          ['Tai Chi', group_icon_gen('Tai Chi')],
+          ['Tennis', group_icon_gen('Tennis')],
+          ['Triathlon', group_icon_gen('Triathlon')],
+          ['Volleyball', group_icon_gen('Volleyball')],
+          ['Walking', group_icon_gen('Walking')],
+          ['Water Aerobics', group_icon_gen('Water Aerobics')],
+          ['Water Sports', group_icon_gen('Water Sports')],
+          ['Weightlifting', group_icon_gen('Weightlifting')],
+          ['Wrestling', group_icon_gen('Wrestling')],
+          ['Yoga', group_icon_gen('Yoga')],
+          ['Other', group_icon_gen('Other')],
+        ])) %>
+      </div>
+    </div>          
+    <%= f.submit "Create Group", class: "submit-btn" %>
+  <% end %>
+</div>
