@@ -1,0 +1,25 @@
+<ul class='list-unstyled w-100'>
+  <% @group_members.each do |member| %>
+    <li class="w-100 group-member-list-item p-0 m-0">
+      <div class="list-content d-flex flex-row w-100 h-100 align-items-center">
+        <div class="user-name d-flex h-100 align-items-center justify-content-center mr-3">
+          <%= gravatar_for(member.user) %>
+          <p><%= member.user_name %></p>
+        </div>
+        <% if user_badges_gen(member.user, @group) %>
+          <div class="group-badge d-flex h-100 flex-column align-items-center justify-content-center mr-3 ml-auto">
+            <p><i class="<%= user_badges_gen(member.user, @group) %>"></i></p>
+            <p><%= badges_phrase_gen(member.user, @group) %></p>
+          </div>
+          <div class="joined d-flex h-100 align-items-center justify-content-center mr-3">
+            <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
+          </div>
+        <% else %>
+          <div class="joined d-flex h-100 align-items-center justify-content-center mr-3 ml-auto">
+            <p>Joined<br> <%= time_ago_in_words(member.created_at) %><br> ago.</p>
+          </div>
+        <% end %>
+      </div>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,23 @@
+<div class="new-activity-form d-flex justify-content-center align-items-center flex-column">
+  <%= form_for(@activity) do |f| %>
+    <div class="new-activity-form-fields p-4">
+      <div class="field first-field">
+        <%= f.label :name, 'Title' %><br />
+        <%= f.text_field :name, placeholder: 'Give your workout a title...' %>
+      </div>
+      <div class="field">
+        <%= f.label :amount, 'Time' %><br />
+        <%= f.text_field :amount, placeholder: 'How many minutes of exercise?' %>
+      </div>
+      <div class="field">
+        <%= f.label :calories, 'Calories Burnt' %><br />
+        <%= f.text_field :calories, placeholder: 'How many calories did you burn?' %>
+      </div>
+      <div class="field last-field mb-0">
+        <%= f.label :group_id, 'Exercise Group' %>
+        <%= f.collection_select(:group_id, Membership.my_memberships(current_user), :group_id, :group_name) %>
+      </div>
+    </div>          
+    <%= f.submit "Log Activity", class: "submit-btn mb-4" %>
+  <% end %>
+</div>

@@ -8,17 +8,18 @@ AllCops:
     - "README.md"
     - "node_modules/**/*"
     - "spec/support/*"
-  NewCops: enable
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 160
+  Max: 180
 Metrics/MethodLength:
   Include:
     - "app/controllers/*"
     - "app/models/*"
   Max: 20
+Metrics/ModuleLength:
+  Max: 180
 Metrics/AbcSize:
   Include:
     - "app/controllers/*"
@@ -27,6 +28,7 @@ Metrics/AbcSize:
 Metrics/ClassLength:
   Max: 150
 Metrics/BlockLength:
+  Enabled: false
   ExcludedMethods: ['describe']
   Max: 30
 
@@ -42,6 +44,8 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/MutableConstant:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
@@ -54,4 +58,8 @@ Layout/MultilineMethodCallIndentation:
 Style/NumericPredicate:
   Enabled: false
 Style/BlockComments:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
   Enabled: false

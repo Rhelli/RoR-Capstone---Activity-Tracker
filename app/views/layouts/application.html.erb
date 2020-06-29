@@ -10,6 +10,16 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="main-container d-flex align-items-center justify-content-center">
+      <%= render 'layouts/flash_messages' %>
+      <% if current_user.nil? %>
+        <%= yield %>
+      <% else %>
+        <%= render 'layouts/navbar' %>
+        <div class="container-fluid main-card d-flex flex-row justify-content-start align-items-start signed-in-container ml-auto mr-0 px-0">
+          <%= yield %>
+        </div>
+      <% end %>
+    </div>
   </body>
 </html>

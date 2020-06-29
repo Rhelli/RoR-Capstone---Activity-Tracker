@@ -1,0 +1,31 @@
+<main class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+  <div class="groups-show-container d-flex justify-content-center align-items-center flex-column">
+    <header>
+      <h1><%= @group.name %></h1>
+    </header>
+    <div class="group-show-main-card d-flex flex-row">
+      <div class="group-bio h-100 d-flex flex-column justify-content-start align-items-center m-0 p-2">
+        <div class=" group-bio-top w-100 d-flex flex-column justify-content-start align-items-center p-0">
+          <div class="group-icon d-flex align-items-center justify-content-center mt-3">
+            <i class="<%= @group.icon %>"></i>
+          </div>
+          <h2 class="mt-2"><%= @group.name %></h2>
+          <p class="px-2"><%= @group.description %></p>
+        </div>
+        <%= render 'groups/group_buttons' %>
+      </div>
+      <div class="group-right-container h-100 d-flex flex-column p-0 m-0">
+        <div class="group-info w-100 d-flex flex-column justify-content-start align-items-center m-0 p-0">
+          <h3 class="p-0 pl-3 m-0 w-100">Team Members</h3>
+          <div class="w-100 group-member-list">
+            <%= render 'groups/group_members' %>
+          </div>
+        </div>
+        <div class="group-activities w-100 d-flex flex-column align-items-center justify-content-start p-0 m-0">
+          <h3 class="w-100 justify-text-left p-1 ml-4 mb-0">New Activities</h3>
+          <%= render 'groups/group_activities' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

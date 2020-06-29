@@ -1,0 +1,12 @@
+<main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
+  <div class="my-activities-container d-flex justify-content-center align-items-center flex-column p-0 m-0">
+    <div class='new-activity'>
+      <%= link_to 'New Activity', new_activity_path %>
+    </div>
+    <header>
+      <h1>My Activities</h1>
+      <p>All your <u>most recent</u> activities</p>
+    </header>
+    <%= render 'activity_entries/my_activities' %>
+  </div>
+</main>

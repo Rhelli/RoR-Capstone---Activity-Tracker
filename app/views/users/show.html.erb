@@ -1,0 +1,41 @@
+<main class="profile-container w-100 h-100 p-3 m-0">
+  <div class="w-100 profile-top-section mx-0 px-2 d-flex flex-row">
+    <aside class="profile-column d-flex flex-column justify-content-center align-items-center mr-1">
+      <%= gravatar_for(current_user) %>
+      <h1 class="profile-name mt-2"><%= full_name %></h1>
+      <p class="profile-join">Joined on <%= current_user.created_at.strftime('%B %e %Y') %></p>
+    </aside>
+    <div class="d-flex flex-column main-column">
+      <ul class="float-right profile-quicklinks my-0 d-flex align-items-center">
+        <li class="d-inline"><%= link_to 'Recent Activities', activity_entries_index_path %></li>
+        <li class="d-inline"><%= link_to 'Create Activity', activities_new_path %></li>
+        <li class="d-inline"><%= link_to 'Create Group', groups_new_path %></li>
+      </ul>
+      <div class="profile-quick-stats d-flex flex-row">
+        <div class="profile-activity-counter d-flex justify-content-start align-items-center flex-column mr-1">
+          <p class="mb-0 activity-count"><%= @recent_activities_all.count %></p>
+          <p class="mt-3 font-weight-bold">Activities in the last 4 weeks</p>
+          <%= render 'users/quickstats_dots' %>
+        </div>
+        <div class="profile-widget ml-3">
+          <div>
+            <div class="profile-widget-activity d-flex justify-content-start align-items-center flex-column pt-1 pr-0">
+              <h2 class="mr-auto ml-3">Most Recent Activities</h2>
+              <%= render 'users/recent_activities' %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-bottom-section w-100 mx-0 d-flex flex-row">
+    <div class="profile-activities-list h-100 w-50">
+      <h2 class="pl-4 pt-2 mb-1">All Activities</h2>
+      <%= render 'users/all_activities' %>
+    </div>
+    <div class="profile-group-list h-100 w-50 px-1">
+    <h2 class="pl-4 pt-2 mb-1">My Groups</h2>
+      <%= render 'users/group_list' %>
+    </div>
+  </div>
+</main>

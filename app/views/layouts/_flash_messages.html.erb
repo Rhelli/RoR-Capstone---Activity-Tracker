@@ -1,0 +1,12 @@
+<div class="flash-messages">
+  <% if notice.present? %>
+    <div class="notice px-4 py-3">
+      <p class="mb-0"> <%= notice %> </p>
+    </div>
+  <% end %>
+  <% if alert.present? %>
+    <div class="alert">
+      <p class="mb-0"> <%= alert %> </p>
+    </div>
+  <% end %>
+</div>

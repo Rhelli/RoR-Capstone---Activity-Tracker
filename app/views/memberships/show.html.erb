@@ -1,0 +1,20 @@
+<main class="d-flex flex-column w-100 h-100 justify-content-center align-items-center">
+  <div class="my-groups-container d-flex justify-content-center align-items-center flex-column">
+    <div class="new-group">
+      <%= link_to 'Create A New Group', new_group_path %>  
+    </div>
+    <header>    
+      <h1>My Groups</h1>
+      <p>All your active group memberships</p>
+    </header>
+    <div class="my-groups-main-card d-flex flex-row">
+      <div class="my-groups-list h-100 d-flex flex-column justify-content-start align-items-start">
+        <%= render 'memberships/my_memberships' %>
+      </div>
+      <div class="my-groups-join h-100 d-flex flex-column justify-content-start align-items-center py-3 px-2">
+        <h2 class="w-100">Suggested Groups</h2>
+        <%= render 'memberships/non_memberships' %>
+      </div>
+    </div>
+  </div>
+</main>

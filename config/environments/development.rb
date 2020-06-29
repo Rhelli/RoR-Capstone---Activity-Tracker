@@ -59,4 +59,18 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  # Devise auth config
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+  # Bullet N+1 Testing config
+  #config.after_initialize do
+  #  Bullet.enable = true
+  #  Bullet.alert = true
+  #  Bullet.bullet_logger = true
+  #  Bullet.console = true
+  #  Bullet.rails_logger = true
+  #  Bullet.add_footer = true
+  #  Bullet.skip_html_injection = false
+  #end
 end
