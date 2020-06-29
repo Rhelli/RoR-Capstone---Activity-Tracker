@@ -45,7 +45,7 @@ This project is unlike those that have come before it. We are required to adhere
 
 The Capstone therefore demonstrates itself to be a more true-to-form application of our skills to real-world projects, providing us with valuable experience of creating deliverables under time pressure.
 
-## 🛠️ The Project Spec
+## 🛠️ The Nitty Gritty
 The project objective was to build a Ruby on Rails based web application that would group a chosen item together, for example, payments, projects between friends, or in the case of this project, activities.
 
 The design guidelines followed that of [Snapscan](https://www.behance.net/gallery/19759151/Snapscan-iOs-design-and-branding?tracking_source=), designed by Gregoire Vella, however a certain amount of wiggle room beyond the colors, typographies and general layout was allowed.
