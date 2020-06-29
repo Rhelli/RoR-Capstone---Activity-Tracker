@@ -6,7 +6,7 @@ RSpec.describe ActivitiesController, type: :controller do
   let(:create_activity) { post :create, params: { activity: { name: 'Evening Run', amount: 40, calories: 120, author_id: merry.id, group_id: group.id } } }
   let(:create_bad_activity) { post :create, params: { activity: { first_name: 'Evening Run', amount: 40, calories: 120, author_id: merry.id, group_id: group.id } } }
   before { sign_in merry }
-  
+
   context 'new activity' do
     it 'builds a new activity with the current user as the author' do
       activity = merry.activities.build

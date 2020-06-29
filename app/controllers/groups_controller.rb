@@ -10,7 +10,7 @@ class GroupsController < ApplicationController
       flash[:notice] = "You created #{@group.name}. Now to get some team members!"
       redirect_to groups_show_path(@group)
     else
-      flash[:alert] = "An Error Ocurred! Please Try Again."
+      flash[:alert] = 'An Error Ocurred! Please Try Again.'
       redirect_back(fallback_location: root_path)
     end
   end

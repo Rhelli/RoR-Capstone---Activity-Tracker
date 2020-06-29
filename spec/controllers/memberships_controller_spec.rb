@@ -5,7 +5,7 @@ RSpec.describe MembershipsController, type: :controller do
   let!(:frodo) { User.create!(first_name: 'Frodo', last_name: 'Baggins', email: 'frodo@hobbiton.com', password: 'password', password_confirmation: 'password') }
   let!(:group1) { Group.create!(name: 'Running', description: nil, creator_id: '1', icon: 'fas fa-burn') }
   let(:create_valid_membership) { post :create, params: { user_id: frodo.id, group_id: group1.id } }
-  let(:create_invalid_membership) { post :create, params: {method: :delete} }
+  let(:create_invalid_membership) { post :create, params: { method: :delete } }
 
   before { sign_in frodo }
   context 'memberships new action' do

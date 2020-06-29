@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe ActivityEntriesController, type: :controller do
   let!(:pippin) { User.create!(first_name: 'Pippin', last_name: 'Took', email: 'fool@took.com', password: 'password', password_confirmation: 'password') }
   let!(:running) { Group.create!(name: 'Running', creator_id: '1', icon: 'fas fa-running') }
-  let(:evening_run1) { Activity.create!(name: 'Evening Run', amount: 40, calories: 400000, author_id: pippin.id, group_id: running.id) }
+  let(:evening_run1) { Activity.create!(name: 'Evening Run', amount: 40, calories: 400, author_id: pippin.id, group_id: running.id) }
   before { sign_in pippin }
   context 'activity entry index action' do
     it 'renders the correct page and shows all the users activities' do
@@ -29,6 +29,4 @@ RSpec.describe ActivityEntriesController, type: :controller do
       expect(assigns(:my_activities).last).to have_attributes(id: old_activity.id)
     end
   end
-
-
 end

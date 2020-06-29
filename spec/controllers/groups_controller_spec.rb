@@ -4,7 +4,7 @@ RSpec.describe GroupsController, type: :controller do
   let!(:gandalf) { User.create!(first_name: 'Gandalf', last_name: 'Bladorthin', email: 'gandalf@email.com', password: 'password', password_confirmation: 'password') }
   let!(:pippin) { User.create!(first_name: 'Pippin', last_name: 'Took', email: 'fool@took.com', password: 'password', password_confirmation: 'password') }
   let!(:running) { Group.create!(name: 'Running', creator_id: gandalf.id, icon: 'fas fa-burn') }
-  let(:create_valid_group) { post :create, params: { group: { name: 'Jogging', creator_id: gandalf.id, icon: 'fas fa-burn'} } }
+  let(:create_valid_group) { post :create, params: { group: { name: 'Jogging', creator_id: gandalf.id, icon: 'fas fa-burn' } } }
   before { sign_in gandalf }
   context 'groups new action' do
     it 'builds a new group with the current user as the creator' do
@@ -28,7 +28,7 @@ RSpec.describe GroupsController, type: :controller do
     end
 
     it 'displays a flash message and refreshes the page if the new group cant be created' do
-      post :create, params: { group: { name: 'Cheese', description: 'We refuse to exercise. Only cheese.', creator_id: '2', icon: 'fas fa-cheese'} }
+      post :create, params: { group: { name: 'Cheese', description: 'We refuse to exercise. Only cheese.', creator_id: '2', icon: 'fas fa-cheese' } }
       expect(response).to have_http_status(:redirect)
       expect(flash).to be_present
     end

@@ -18,6 +18,8 @@ Metrics/MethodLength:
     - "app/controllers/*"
     - "app/models/*"
   Max: 20
+Metrics/ModuleLength:
+  Max: 180
 Metrics/AbcSize:
   Include:
     - "app/controllers/*"
@@ -56,4 +58,8 @@ Layout/MultilineMethodCallIndentation:
 Style/NumericPredicate:
   Enabled: false
 Style/BlockComments:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
   Enabled: false

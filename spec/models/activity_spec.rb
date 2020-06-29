@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Activity, type: :model do
-  let!(:example_user) { User.create!(first_name: 'Frodo', last_name: 'Baggins', email: 'sharetheload@email.com', password: 'password', password_confirmation: 'password')}
+  let!(:example_user) { User.create!(first_name: 'Frodo', last_name: 'Baggins', email: 'sharetheload@email.com', password: 'password', password_confirmation: 'password') }
   context 'activity model validations' do
     it 'accepts a new activity entry with correct parameters' do
       run = Activity.new(name: 'Evening Run', amount: 40, calories: 300, author_id: example_user.id)

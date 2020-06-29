@@ -25,14 +25,14 @@ class User < ApplicationRecord
   scope :joined_groups, ->(user) { Group.all.where('id IN (?)', user.memberships.map(&:group_id)) }
 
   def user_name
-    "#{self.first_name} "+"#{self.last_name}"
+    "#{first_name} " + last_name.to_s
   end
 
   def user_id
-    self.id
+    id
   end
 
   def author_name
-    "#{self.first_name} "+"#{self.last_name}"
+    "#{first_name} "+"#{last_name}"
   end
 end

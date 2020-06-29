@@ -12,22 +12,22 @@ class Group < ApplicationRecord
   scope :recent_activities, ->(group) { Activity.where('group_id = ? AND created_at >= ?', group.id, Date.today - 6).order(created_at: :desc).limit(5) }
 
   def group_icon
-    self.icon.html_safe
+    icon.html_safe
   end
 
   def group_name
-    self.name
+    name
   end
 
   def group_description
-    self.description
+    description
   end
 
   def group_age
-    self.created_at
+    created_at
   end
 
   def group_id
-    self.id
+    id
   end
 end
