@@ -10,7 +10,7 @@
   <% end %>
   <% if is_creator?(@group, current_user) %>
     <div class="group-delete-button">
-      <%= button_to 'Delete Group', { :controller => 'groups', action: 'destroy', :group_id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? This Action Cannot Be Undone.'} %>
+      <%= button_to 'Delete Group', { :controller => 'groups', action: 'destroy', :id => @group.id }, :method => :delete, data: { confirm: 'Are You Sure? This Action Cannot Be Undone.'} %>
     </div>
   <% end %>
 </div>

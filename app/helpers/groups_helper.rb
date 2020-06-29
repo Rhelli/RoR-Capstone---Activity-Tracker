@@ -64,7 +64,7 @@ module GroupsHelper
         'fas fa-fire-alt'
       when 'BMX'
         'fas fa-biking'
-      when 'Calisthentics'
+      when 'Calisthenics'
         'fas fa-burn'
       when 'Canoeing'
         'fas fa-anchor'

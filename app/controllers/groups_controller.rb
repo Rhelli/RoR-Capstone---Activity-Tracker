@@ -25,7 +25,7 @@ class GroupsController < ApplicationController
   def destroy
     @group = Group.find(params[:id])
     @group.destroy
-    flash[:notice] = "The group ,#{@group.name}, has been deleted."
+    flash[:notice] = "The group #{@group.name} has been deleted."
     redirect_to users_show_path(current_user)
   end
 
