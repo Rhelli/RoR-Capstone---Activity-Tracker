@@ -1,7 +1,7 @@
 <p align="center">
   <img src="screens/preview.png" alt="Stay In Touch's Home Page" width="900" height="auto">
 
-  <h1 align="center"> 🏃🏽🏃🏽‍♀️ Activity Tracker</h1>
+  <h1 align="center"> 🏃🏽‍♀️🏃🏽 Activity Tracker</h1>
 
 
 <h3 align='center'>  
@@ -12,11 +12,11 @@
     <a href="#"><strong>Visit The Site »</strong></a>
     <br />
     <br />
-    <a href="#">Download this repository</a>
+    <a href="https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/archive/release/0.1.0.zip">Download this repository</a>
     |
-    <a href="#">Report A Bug</a>
+    <a href="https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/issues/new/choose">Report A Bug</a>
     |
-    <a href="#">Fork It</a>
+    <a href="https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/fork">Fork It</a>
   </p>
 </p>
 
