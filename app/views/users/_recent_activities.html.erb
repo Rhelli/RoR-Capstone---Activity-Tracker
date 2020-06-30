@@ -1,5 +1,5 @@
 <ul class="list-unstyled pt-2 w-100 mb-0 pb-0 px-1">
-  <% @recent_activities_all.each do |activity| %>
+  <% @recent_activities_all.limit(5).each do |activity| %>
     <li>
       <div class="my-group-name">
         <div class="profile-widget-group-name mb-2">
