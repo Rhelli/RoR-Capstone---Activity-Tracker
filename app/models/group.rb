@@ -5,7 +5,7 @@ class Group < ApplicationRecord
 
   belongs_to :creator, class_name: 'User'
   has_many :activity_entries, foreign_key: :group_id, dependent: :destroy
-  has_many :activities, through: :activity_entries, dependent: :destroy
+  has_many :activities, through: :activity_entries
   has_many :memberships, dependent: :destroy
   has_many :users, through: :memberships
 
