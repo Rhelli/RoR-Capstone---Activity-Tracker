@@ -70,9 +70,12 @@
       .activity-list-item {
         border-bottom: 1px solid #bfbfbf;
         padding: 14px 16px;
+        width: 100%;
+        overflow: hidden;
 
         .icon-title {
           font-size: 30px;
+          width: auto;
           p {
             width: 50px;
             height: 50px;
@@ -83,13 +86,14 @@
           }
           
           h2 {
-            max-width: 500px;
+            width: auto;
             margin-bottom: 0;
             font-size: 23px;
             font-weight: 400;
             text-overflow: ellipsis;
             overflow: hidden;
             white-space: nowrap;
+            padding-right: 10px;
 
             a {
               width: 100%;
@@ -129,6 +133,8 @@
         }
 
         .my-activities-stats {
+          min-width: 30%;
+          white-space: nowrap;
           background-color: rgba(55, 120, 194, 0.2);
           padding: 12px 16px;
           border-radius: 4px;
