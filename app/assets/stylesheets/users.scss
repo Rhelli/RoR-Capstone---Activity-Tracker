@@ -7,7 +7,7 @@
 
   .profile-column {
     background-color: #5089CA;
-    margin-top: 60px;
+    margin-top: 54px;
     height: 80%;
     width: 25%;
     border-radius: 8px;
@@ -87,7 +87,7 @@
     }
 
     .profile-quick-stats {
-      padding: 0 0 24px 12px;
+      padding: 0 0 12px 12px;
       height: 85%;
       width: 100%;
 
@@ -97,11 +97,12 @@
         border: 6px solid #BDD3EB;
         border-radius: 8px;
         text-align: center;
-        padding-top: 20px;
+        padding: 10px 6px;
         -webkit-box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
         -moz-box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
         box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
         overflow: hidden;
+        overflow-y: auto;
 
         .activity-count {
           font: 700 100px/100px 'Proxima Nova Rg';
@@ -122,6 +123,9 @@
             width: 60%;
             height: auto;
             margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             div {
               height: 32px;
             }
@@ -259,6 +263,7 @@
     }
 
     .my-groups-list {
+      margin-top: 14px;
       height: 85%;
       overflow: hidden;
       overflow-y: auto;
@@ -266,10 +271,10 @@
 
     .my-group-name {
       width: auto !important;
-      font-size: 26px;
+      font-size: 22px;
       background-color: rgba(95, 181, 35,0.9);
       border: 1px solid #47881A;
-      padding: 14px 24px 14px 20px;
+      padding: 10px 18px 10px 16px;
       margin-right: 5px;
       margin-bottom: 10px;
       border-radius: 40px;
