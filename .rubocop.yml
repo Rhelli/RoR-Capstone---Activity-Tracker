@@ -64,8 +64,6 @@ Metrics/PerceivedComplexity:
 Metrics/CyclomaticComplexity:
   Enabled: false
 
-Layout/EmptyLinesAroundAttributeAccessor:
-  Enabled: false
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
 Lint/DeprecatedOpenSSLConstant:
