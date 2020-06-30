@@ -1,0 +1,248 @@
+@import "bootstrap/scss/bootstrap";
+
+// FONT FAMILIES ----------------------------------------------------------------------------------------------//
+@font-face {
+  font-family: 'Proxima Nova Rg';
+  src: url('ProximaNova-Regular.woff2') format('woff2'),
+      url('ProximaNova-Regular.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Proxima Nova Bold';
+  src: url('ProximaNova-Bold.woff2') format('woff2'),
+      url('ProximaNova-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+// KEYFRAMES --------------------------------------------------------------------------------------------------//
+@keyframes new-activity {
+  0% {
+    background-color: #A569BD;
+  }
+  75% {
+    background-color: #7C4F8E;
+  }
+  100% {
+    background-color: #673AB7;
+  }
+}
+
+// GLOBAL SETTINGS ------------------------------------------------------------------------------------------------//
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font: 300 16px/16px 'Proxima Nova Rg', monospace;
+  height: 100vh;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0,0,0,.01) 0 0 1px;
+}
+
+header {
+  h1 {
+    text-align: center;
+  }
+}
+
+// FONTS ------------------------------------------------------------------------------------------//
+.bold-title {
+  font: 700 42px/42px 'Proxima Nova Bold', monospace;
+}
+
+// FLASH MESSAGES -----------------------------------------------------------------------------------//
+.flash-messages {
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #101010;
+  font: 600 18px/18px 'Proxima Nova Rg', monospace;
+
+  .notice {
+    background-color: rgba(256, 256, 256, 0.7);
+    border-radius: 4px;
+  }
+
+  .alert {
+    background-color: rgba(199, 0, 57, 0.9);
+    border-radius: 4px;
+  }
+}
+
+// MAIN CONTAINER -----------------------------------------------------------------------------------//
+.main-container {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(41,90,146,1) 76.9% );
+}
+
+.main-card {
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+// DEVISE PAGES -------------------------------------------------------------------------------------//
+
+.devise-container {
+  width: 100%;
+  height: 80%;
+  background: #fafbfd;
+}
+
+.devise-form-container {
+  width: 65%;
+}
+
+// FORMS -------------------------------------------------------------//
+form {
+  width: 60%;
+  margin: 8px 0;
+
+  .field {
+    width: 100%;
+    padding: 8px 0px;
+    label {
+      margin-bottom: 8px;
+    }
+
+    input {
+      width: 100%;
+      border: 1px solid darkblue;
+      border-radius: 4px;
+      padding: 8px;
+      background-color: #fafbfd;
+    }
+
+    input[type="checkbox"] {
+      width: fit-content;
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    margin: 8px 0;
+  }
+  input[type="submit"] {
+    padding: 8px;
+    width: 50%;
+    border: none;
+    border-radius: 4px;
+    background-color: #5fb523;
+    color: #101010;
+    text-transform: uppercase;
+    font-weight: 900;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #8BC34A;
+    color: #fff;
+  }
+
+  .actions.reset {
+    input[type="submit"] {
+      width: 100%;
+    }
+  }
+
+  #error_explanation {
+    h2 {
+      color: #101010;
+      font-size: 1em;
+    }
+    ul {
+      color: #f00;
+    }
+  }
+}
+
+// NAVBAR ------------------------------------------------------------------------------------------//
+.navbar {
+  left: 0;
+  top: 73px;
+  bottom: 0;
+  height: 85%;
+  width: 15%;
+  color: rgba(256, 256, 256, 0.8);
+  font: 300 20px/20px 'Proxima Nova Rg', monospace;
+  a {
+    color: rgba(256, 256, 256, 0.8);
+  }
+  .navbar-nav  {
+    width: 100% !important;
+  }
+  .nav-item {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    margin-top: 30px;
+    svg {
+      position: absolute;
+      left: -10px;
+      border: 2px solid rgba(256, 256, 256, 0.5);
+      height: 40px;
+      width: 40px;
+      padding: 5px;
+      border-radius: 50%;
+    }
+    a {
+      width: 80%;
+      margin-left: auto;
+      text-align: left;
+      border-bottom: 2px solid #5089CA;
+      transition-duration: 0.2s;
+    }
+
+    &:hover {
+      a {
+        border-bottom: 2px solid #5fb523;
+        transition-duration: 0.15s;
+      }
+      svg {
+        border: 2px solid #5fb523;
+        transition-duration: 0.2s;
+      }
+    }
+  }
+  .navbar-header {
+    width: 100%;
+
+    img {
+      display: block;
+      height: 125px;
+      width: 125px;
+      border-radius: 50%;
+      border: 2px solid #5089CA;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font: 300 22px/22px 'Proxima Nova Rg', monospace;
+    }
+  }
+}
+
+// SIGNED IN MAIN CONTAINER --------------------------------------------------------------------//
+.signed-in-container {
+  width: 85%;
+  height: 85%;
+  background-color: #fafbfd;
+  border: 1px solid #3C6798;
+  border-right: none;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+}
