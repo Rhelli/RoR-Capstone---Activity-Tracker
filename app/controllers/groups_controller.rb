@@ -18,7 +18,7 @@ class GroupsController < ApplicationController
   def show
     @group = Group.find(params[:id])
     @group_members = Membership.group_memberships(@group).includes([:user])
-    @group_activities = Group.recent_activities(@group).includes([:author])
+    @group_activities = Group.recent_activities(@group).includes([:author]).order(created_at: :desc)
     @my_groups = Membership.my_memberships(current_user)
   end
 
