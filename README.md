@@ -9,7 +9,7 @@
 </h3>
 <p align="center">
     <br />
-    <a href="#"><strong>Visit The Site »</strong></a>
+    <a href="https://secret-cliffs-91268.herokuapp.com/"><strong>Visit The Site »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Rhelli/RoR-Capstone---Activity-Tracker/archive/release/0.1.0.zip">Download this repository</a>
@@ -81,7 +81,7 @@ Beyond the familiar groups, memberships and users features, this project focused
  - Heroku
 
 ### 💻 Setup & Use
-Follow [this link](#) to see a live version of the project. If you'd like a closer look, continue reading....
+Follow [this link](https://secret-cliffs-91268.herokuapp.com/) to see a live version of the project. If you'd like a closer look, continue reading....
 
 #### Setup
 Setup should be fairly straightforward. You will have to ensure your machine is properly equipped to run the code first:
