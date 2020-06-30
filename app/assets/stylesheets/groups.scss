@@ -1,3 +1,397 @@
-// Place all the styles related to the Groups controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// GROUPS SHOW PAGE ---------------------------------------------------------------------------//
+.groups-show-container {
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
+  width: 90%;
+  height: 80%;
+  border-radius: 6px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  header {
+    text-align: center;
+
+    h1 {
+      color: #fafbfd;
+      font: 700 48px/48px 'Proxima Nova Bold';
+      margin-top: -20px;
+    }
+
+    p {
+      font: 300 18px/18px 'Proxima Nova Rg';
+      color: #fafbfd;
+      text-align: center;
+    }
+  }
+
+  .group-show-main-card {
+    background-color: #fafbfd;
+    width: 90%;
+    height: 80%;
+    border-radius: 4px;
+    -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+
+    .group-bio {
+      width: 25%;
+      border-right: 1px solid #dfdfdf;
+
+      h2 {
+        font: 400 36px/36px 'Proxima Nova Rg', monospace;
+      }
+
+      p {
+        text-align: center;
+        font: 400 18px/20px 'Proxima Nova Rg', monospace;
+      }
+
+      .group-bio-top {
+        border-bottom: 2px solid #dfdfdf;
+        text-align: center;
+
+        .group-icon {
+          background-color: #5fb523;
+          height: 150px;
+          width: 150px;
+          border-radius: 50%;
+          border: 2px solid #539E1F;
+          -webkit-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+          -moz-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+          box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+
+          svg {
+            width: 80px;
+            height: 80px;
+            padding: 10px;
+            background-color: #fafbfd;
+            border-radius: 50%;
+            border: 2px solid #539E1F;
+            -webkit-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+            -moz-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+            box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+          }
+        }
+      }
+
+      .group-bio-bottom {
+        form {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: auto;
+          margin: 0;
+
+          input[type="submit"] {
+            width: 80%;
+            height: 40px;
+            color: #fafbfd;
+          }
+        }
+
+        .join {
+          input[type="submit"]{
+            transition-duration: 0.2s;
+            -webkit-box-shadow: 0px 2px 7px -1px rgba(76,110,52,1);
+            -moz-box-shadow: 0px 2px 7px -1px rgba(76,110,52,1);
+            box-shadow: 0px 2px 7px -1px rgba(76,110,52,1);
+
+            &:hover {
+              background-color: #87C85A;
+              transition-duration: 0.15s;
+              -webkit-box-shadow: 0px 2px 3px -2px rgba(76,110,52,1);
+              -moz-box-shadow: 0px 2px 3px -2px rgba(76,110,52,1);
+              box-shadow: 0px 2px 3px -2px rgba(76,110,52,1);
+            }
+          }
+        }
+
+        .leave {
+          input[type="submit"]{
+            background-color: #C0392B;
+            transition-duration: 0.2s;
+            -webkit-box-shadow: 0px 2px 7px -1px rgba(107,32,26,0.8);
+            -moz-box-shadow: 0px 2px 7px -1px rgba(107,32,26,0.8);
+            box-shadow: 0px 2px 7px -1px rgba(107,32,26,0.8);
+
+            &:hover {
+              background-color: #f00;
+              transition-duration: 0.15s;
+              -webkit-box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
+              -moz-box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
+              box-shadow: 0px 2px 3px -2px rgba(107,32,26,1);
+            }
+          }
+        }
+
+        .group-delete-button {
+          input[type="submit"] {
+            margin-top: 10px;
+            font-size: 14px;
+            width: auto;
+            background: transparent;
+            border: 2px solid #C0392B;
+            color: #C0392B;
+            text-transform: initial;
+            transition-duration: 0.2s;
+
+            &:hover {
+              background-color: #f00;
+              color: #fafbfd;
+              border: 2px solid #f00;
+              transition-duration: 0.15s;
+            }
+          }
+        }
+      }
+
+    }
+    .group-right-container {
+      width: 75%;
+
+      .group-info {
+        border-left: 1px solid #dfdfdf;
+        height: 60%;
+
+        h3 {
+          width: 100%;
+          font-size: 26px;
+          text-align: left;
+          padding-left: 26px;
+        }
+
+        .group-member-list {
+          height: 100%;
+          overflow: hidden;
+          border-bottom: 1px solid #dfdfdf;
+
+          ul {
+            height: 100%;
+            overflow-y: auto;
+
+            .group-member-list-item {
+              border-bottom: 2px solid #dfdfdf;
+              height: 80px;
+
+              p {
+                font-size: 14px;
+                margin-bottom: 0;
+              }
+
+              .user-name {
+                p {
+                  font-size: 26px;
+                  margin-left: 10px;
+                }
+
+                img {
+                  width: 50px;
+                  height: 50px;
+                  border-radius: 50%;
+                  margin-left: 20px;
+                }
+              }
+
+              .group-badge {
+                width: 120px;
+                text-align: center;
+                background-color: rgba(206, 147, 216, 0.4);
+
+                svg {
+                  width: 30px;
+                  height: 30px;
+                  margin-bottom: 5px;
+                }
+
+                .gold {
+                  color: #F1C40F;
+                }
+
+                .silver {
+                  color: #B2BABB;
+                }
+
+                .bronze {
+                  color: #B9770E;
+                }
+
+                .creator {
+                  color: #673AB7;
+                }
+              }
+
+              .joined {
+                text-align: center;
+                width: 80px;
+              }
+            }
+          }
+        }
+      }
+
+      .group-activities {
+        height: 40%;
+        width: 100%;
+        overflow: hidden;
+        border-top: 1px solid #8F8F8F;
+
+        p {
+          margin-bottom: 0;
+        }
+
+        ul {
+          height: 100%;
+          overflow-y: scroll;
+        }
+        
+        .group-activity-list-item {
+          margin-bottom: 10px;
+          padding: 10px;
+          border-bottom: 1px solid #EBDEF0;
+
+          .name-author {
+            height: 50px;
+            padding: 8px 14px;
+            background-color: rgba(55,120,194,0.2);
+            border-radius: 8px 8px 8px 0;
+
+            .name {
+              font-size: 18px;
+              font-weight: 400;
+
+              a {
+                color: #5089CA;
+                transition-duration: 0.2s;
+
+                &:hover {
+                  color: #A569BD;
+                  transition-duration: 0.15s;
+                  text-decoration: none;
+                }
+              }
+            }
+
+            .author {
+              font-size: 14px;
+            }
+          }
+
+          .activity-stats {
+            height: 50px;
+            padding: 8px 14px;
+            background-color: rgba(206, 147, 216, 0.3);
+            border-radius: 8px 8px 0 8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// NEW GROUP PAGE --------------------------------------------------------------------------------//
+.new-group-container {
+  position: relative;
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
+  width: 90%;
+  height: 80%;
+  border-radius: 6px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  text-align: center;
+
+  h1 {
+    color: #fafbfd;
+    font: 700 48px/48px 'Proxima Nova Bold';
+    margin-top: -20px;
+  }
+  
+  p {
+    font: 300 18px/18px 'Proxima Nova Rg';
+    color: #fafbfd;
+    text-align: center;
+  }
+
+  .error-explanation {
+    width: 60%;
+    height: auto;
+    color: #101010;
+  }
+
+  .new-group-form {
+    width: 70%;
+    height: 70%;
+    background: #fafbfd;
+    -webkit-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    border: 1px solid #3C6798;
+    border-radius: 4px;
+    font: 300 20px/20px 'Proxima Nova Rg', monospace;
+
+
+    .new-group-form-fields {
+      label {
+        text-align: left;
+        width: 100%;
+      }
+
+      .field {
+        margin-bottom: 10px;
+
+        input[type="text"] {
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          &::placeholder {
+            color: #7FB3D5;
+          }
+        }
+      }
+
+      .last-field {
+        text-align: center;
+        label {
+          width: auto;
+          font-size: 20px;
+        }
+
+        select {
+          height: 35px;
+          text-align: center;
+          margin-left: 10px;
+          font-size: 14px;
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+        }
+      }
+    }
+
+  .submit-btn {
+    width: 250px;
+    height: 45px;
+    position: relative;
+    color: #fafbfd;
+    text-shadow: 0 0 2px #47881A;
+    transition-duration: 0.2s;
+
+    &:hover {
+      background-color: #87C85A;
+      position: relative;
+      transition-duration: 0.15s;
+    }
+  }
+  }
+}

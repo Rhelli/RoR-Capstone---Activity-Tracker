@@ -8,7 +8,7 @@ class MembershipsController < ApplicationController
     if @membership.save
       flash[:notice] = 'Welcome to the club!'
     else
-      flash[:alert] = 'An Error Occured! Please Try Again.'
+      flash[:alert] = 'An Error Occurred! Please Try Again.'
     end
     redirect_back(fallback_location: root_path)
   end
@@ -20,8 +20,11 @@ class MembershipsController < ApplicationController
 
   def destroy
     @membership = Membership.find_by(membership_params)
-    @membership.destroy
-    flash[:notice] = 'Membership terminated. You can join again at any time!'
+    if @membership.destroy
+      flash[:notice] = 'Membership terminated. You can join again at any time!'
+    else
+      flash[:alert] = 'An error occurred. Please try again.'
+    end
     redirect_back(fallback_location: root_path)
   end
 

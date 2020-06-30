@@ -1,3 +1,244 @@
-// Place all the styles related to the Activities controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+// NEW ACTIVITY PAGE ------------------------------------------------------------------------------//
+.new-activity-container {
+  background-image: linear-gradient( 69deg,  rgba(55,120,194,1) 0.6%, rgba(60, 103, 152,1) 76.9% );
+  width: 90%;
+  height: 80%;
+  border-radius: 6px;
+  border: 1px solid #3C6798;
+  -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+  box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+  h1 {
+    color: #fafbfd;
+    font: 700 48px/48px 'Proxima Nova Bold';
+    margin-top: -20px;
+  }
+
+  p {
+    font: 300 18px/18px 'Proxima Nova Rg';
+    color: #fafbfd;
+    text-align: center;
+  }
+
+  .new-activity-form {
+    width: 70%;
+    height: 70%;
+    background: #fafbfd;
+    -webkit-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    box-shadow: 0px 0px 22px -2px rgba(40, 69, 101,0.8);
+    border: 1px solid #3C6798;
+    border-radius: 4px;
+    font: 300 16px/16px 'Proxima Nova Rg', monospace;
+    overflow: hidden;
+    overflow-y: auto;
+
+    .new-activity-form-fields {
+      .field {
+        margin-bottom: 10px;
+        text-align: center;
+
+        input[type="text"] {
+          height: 30px;
+          width: 300px;
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          &::placeholder {
+            color: #7FB3D5;
+          }
+        }
+
+        label {
+          width: 300px;
+          text-align: left;
+        }
+      }
+
+      .last-field {
+        text-align: center;
+        label {
+          width: auto;
+          font-size: 16px;
+        }
+
+        select {
+          height: 35px;
+          text-align: center;
+          margin-left: 10px;
+          font-size: 14px;
+          background-color: #4678B1;
+          border: 1px solid #3D699B;
+          color: #fafbfd;
+          text-shadow: #3D699B 2px 2px 1px;
+          -webkit-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          -moz-box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+          box-shadow: inset 0px 0px 2px 0px rgba(40, 69, 101,0.6);
+        }
+      }
+    }
+
+    .submit-btn {
+      width: 250px;
+      height: 45px;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fafbfd;
+      text-shadow: 0 0 2px #47881A;
+      transition-duration: 0.2s;
+
+      &:hover {
+        background-color: #87C85A;
+        position: relative;
+        transition-duration: 0.15s;
+      }
+    }
+  }
+}
+
+// ACTIVITIES SHOW PAGE ------------------------------------------------------------------------------------//
+.show-activity {
+  form {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    width: auto;
+  
+    input[type="submit"] {
+      background-color: transparent;
+      width: 80px;
+      border: 2px solid rgba(256, 256, 256, 0.4);
+      text-transform: initial;
+      color: rgba(256, 256, 256, 0.4);
+      transition-duration: 0.2s;
+  
+      &:hover {
+        background-color: transparent;
+        border: 2px solid #fafbfd;
+        color: #fafbfd;
+        transition-duration: 0.15s;
+      }
+    }
+  }
+}
+
+.activities-show-card {
+  position: relative;
+  background-color: #fafbfd;
+  height: 75%;
+  width: 50%;
+  border-radius: 4px;
+  -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+  -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+  box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+
+
+  .group-badge {
+    border-right: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+
+
+    p {
+      font-size: 28px;
+      font-weight: 600;
+
+      a {
+        color: inherit;
+        transition-duration: 0.2s;
+
+        &:hover {
+          color: #3D699B;
+          text-decoration: none;
+          transition-duration: 0.15s;
+        }
+      }
+    }
+
+    .icon {
+      background-color: #5fb523;
+      width: 100px;
+      height: 100px;
+      font-size: 56px;
+      border-radius: 50%;
+      color: #fafbfd;
+      border: 2px solid #539E1F;
+    }
+  }
+
+  .workout-time {
+    border-left: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    font-size: 36px;
+    
+    p {
+      text-shadow: 0px 15px 18px rgba(149,149,149,0.87);
+    }
+  }
+
+  .calories-main {
+    border-top: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
+    font-size: 36px;
+    p:last-child {
+      font-size: 20px;
+    }
+  } 
+
+  .calories-stats {
+    border-top: 1px solid #dfdfdf;
+    border-left: 1px solid #dfdfdf;
+
+    .cal-stats-top {
+      border-bottom: 1px solid #dfdfdf;
+      font-size: 42px;
+
+      .gold {
+        color: #F1C40F;
+      }
+
+      .silver {
+        color: #B2BABB;
+      }
+
+      .bronze {
+        color: #B9770E;
+      }
+
+      .award {
+        color: #A569BD;
+      }
+
+      .rank-phrase {
+        font-size: 16px;
+        padding: 8px 12px;
+        text-align: center;
+      }
+    }
+
+    .cal-stats-bottom {
+      border-top: 1px solid #dfdfdf;
+
+      .cals-ph {
+        p:first-child {
+          font-size: 22px;
+        }
+
+        border-right: 1px solid #dfdfdf;
+      }
+
+      .cals-pm {
+        p:first-child {
+          font-size: 22px;
+        }
+
+        border-left: 1px #dfdfdf;
+      }
+    }
+  }
+}

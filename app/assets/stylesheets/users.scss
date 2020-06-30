@@ -1,0 +1,311 @@
+// USER SHOW PAGE ------------------------------------------------------------------------------//
+.profile-top-section {
+  height: 55%;
+  width: 100%;
+  border-bottom: 5px solid #D3E2F2;
+  overflow: hidden;
+
+  .profile-column {
+    background-color: #5089CA;
+    margin-top: 54px;
+    height: 80%;
+    width: 25%;
+    border-radius: 8px;
+    border: 1px solid #3C6798;
+    -webkit-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+    -moz-box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+    box-shadow: inset 0px 0px 18px -1px rgba(40, 69, 101,0.8);
+
+    .gravatar {
+      height: 50%;
+      width: auto;
+      border: 1px solid #3C6798;
+      border-radius: 8px;
+      -webkit-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+      -moz-box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+      box-shadow: 0px 0px 28px -2px rgba(40, 69, 101,0.8);
+    }
+
+    .profile-name {
+      font: 700 36px/36px 'Proxima Nova Bold';
+      text-align: center;
+      text-shadow: #32567E 3px 3px 6px;
+      color: #fafbfd;
+    }
+
+    .profile-join {
+      font-size: 12px;
+      background-color: #284565;
+      padding: 4px 8px;
+      border-radius: 25px;
+      color: #fafbfd;
+      -webkit-box-shadow: 0px 0px 5px 1px rgba(40, 69, 101,0.8);
+      -moz-box-shadow: 0px 0px 5px 1px rgba(40, 69, 101,0.8);
+      box-shadow: 0px 0px 5px 1px rgba(40, 69, 101,0.8);
+    }
+  }
+
+  .main-column {
+    height: 100%;
+    width: 75%;
+    overflow: hidden;
+
+    .profile-quicklinks {
+      font: 700 20px/20px 'Proxima Nova Rg', monospace;
+      margin-top: 20px;
+      height: 15%;
+
+      li {
+        margin-right: 15px;
+        background-color: rgba(55, 120, 194, 0.6);
+        padding: 8px 20px 8px 14px;
+        border-radius: 25px;
+        transition-duration: 0.2s;
+
+        &::before {
+          content: '\2022';
+          color: #fafbfd;
+          font-weight: bold;
+          display: inline-block;
+          width: 0.8em;
+          line-height: 22px;
+        }
+
+        a {
+          color: #fafbfd;
+        }
+
+        &:hover {
+          &::before,
+          a {
+            text-decoration: none;
+            color: #32567E;
+            transition-duration: 0.2s;
+          }
+        }
+      }
+    }
+
+    .profile-quick-stats {
+      padding: 0 0 12px 12px;
+      height: 85%;
+      width: 100%;
+
+      .profile-activity-counter {
+        height: 100%;
+        width: 32%;
+        border: 6px solid #BDD3EB;
+        border-radius: 8px;
+        text-align: center;
+        padding: 10px 6px;
+        -webkit-box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
+        -moz-box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
+        box-shadow: inset 0px 0px 8px -1px rgba(0,56,84,0.9);
+        overflow: hidden;
+        overflow-y: auto;
+
+        .activity-count {
+          font: 700 100px/100px 'Proxima Nova Rg';
+          border-bottom: 5px solid #DAF7A6;
+        }
+
+        .quick-stats-weekly-overview {
+
+          .quick-stats-weeks {
+            width: 40%;
+            p {
+              font: 300 13px/13px 'Proxima Nova Rg';
+              color: #505050;
+            }
+          }
+
+          .quick-stats-dots {
+            width: 60%;
+            height: auto;
+            margin-top: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            div {
+              height: 32px;
+            }
+            p {
+              font-size: 10px;
+              line-height: 16px;
+            }
+            .fa-circle {
+              margin-right: 12px;
+              color: #284565;
+            }
+          }
+        }
+      }
+
+      .profile-widget {
+        width: 68%;
+        height: 100%;
+        text-align: left;
+
+        div {
+          height: 100%;
+        }
+        .profile-widget-activity {
+          height: 100%;
+
+          ul {
+            overflow: hidden;
+            overflow-y: auto;
+          }
+
+          h2 {
+            font: 300 32px/32px 'Proxima Nova Rg', monospace;
+          }
+
+          li {
+            width: auto;
+            word-wrap: none;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            .my-group-name {
+              font: 300 18px/18px 'Proxima Nova Rg', monospace;
+              display: block;
+
+              .profile-widget-group-name {
+                width: auto;
+                background-color: #5089CA;
+                margin-bottom: 5px;
+                padding: 8px 12px;
+                border-radius: 30px;
+                border: 1px solid #4678B1;
+                -webkit-box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
+                -moz-box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
+                box-shadow: 0px 1px 6px -1px rgba(18,33,48,1);
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+
+              .recent-activity-name {
+                font-weight: 700;
+                background-color: #32567E;
+                border: 1px solid #2C4B6E;
+                color: #fafbfd;
+                padding: 8px 14px;
+                border-radius: 25px;
+                -webkit-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+                -moz-box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+                box-shadow: 0px 0px 2px 0px rgba(25,43,63,0.9);
+
+                a {
+                  color: inherit;
+                  text-decoration: none;
+                  transition-duration: 0.2s;
+                  
+                  &:hover {
+                    text-decoration: none;
+                    color: #5fb523;
+                    transition-duration: 0.15s;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-bottom-section {
+  background-color: transparent;
+  height: 45%;
+  overflow: hidden;
+  border-bottom: 1px solid #D3E2F2;
+
+  .profile-activities-list {
+    overflow: hidden;
+    height: 12%;
+
+    .all-activities-list {
+      height: 88%;
+      overflow-y: auto;
+
+      .all-activities-item {
+        width: auto;
+        background-color: #bfbfbf;
+        padding: 10px 14px;
+        border-radius: 30px;
+        border: 1px solid #8F8F8F;
+        box-shadow: 0px 1px 4px 0px #101010;
+
+        a {
+          color: inherit;
+          text-decoration: none;
+          transition-duration: 0.2s;
+
+          &:hover {
+            color: #3C6798;
+            text-decoration: none;
+            transition-duration: 0.15s;
+          }
+        }
+      }
+    }
+  }
+
+  .profile-group-list {
+    overflow: hidden;
+    height: 80%;
+
+    h2 {
+      height: 15%;
+    }
+
+    .my-groups-list {
+      margin-top: 14px;
+      height: 85%;
+      overflow: hidden;
+      overflow-y: auto;
+    }
+
+    .my-group-name {
+      width: auto !important;
+      font-size: 22px;
+      background-color: rgba(95, 181, 35,0.9);
+      border: 1px solid #47881A;
+      padding: 10px 18px 10px 16px;
+      margin-right: 5px;
+      margin-bottom: 10px;
+      border-radius: 40px;
+      overflow-y: auto;
+      -webkit-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+      -moz-box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+      box-shadow: 0px 1px 5px 0px rgba(24,45,9,1);
+
+      svg {
+        width: 47px;
+        height: 47px;
+        background-color: #fafbfd;
+        padding: 9px 7px 7px 7px;
+        margin-right: 12px;
+        border-radius: 50%;
+        border: 2px solid #539E1F;
+        -webkit-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+        -moz-box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+        box-shadow: inset 0px 0px 12px -4px rgba(24,45,9,1);
+      }
+
+      a {
+        color: inherit;
+        transition-duration: 0.2s;
+
+        &:hover {
+          color: #DAF7A6;
+          text-decoration: none;
+          transition-duration: 0.15s;
+        }
+      }
+    }
+  }
+}
