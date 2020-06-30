@@ -4,7 +4,7 @@
       <div class="group-list-item d-flex flex-row align-items-center">
         <div class="h-100 group-list-name d-flex align-items-center">
           <p class="icon d-inline-flex justify-content-center align-items-center"><i class="<%= membership.group_icon %>"></i></p>
-          <p class="name d-inline-block"><%= link_to "#{membership.group_name}", groups_show_path(membership.group) %></p>
+          <p class="name d-inline-block"><%= link_to "#{membership.group_name}", group_path(membership.group) %></p>
         </div>
         <div class=" group-list-stats ml-auto h-100 d-flex flex-row">
           <div class="group-list-item-info first d-flex flex-column justify-content-center align-items-center">

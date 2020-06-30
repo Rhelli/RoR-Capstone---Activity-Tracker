@@ -8,7 +8,7 @@ class ActivitiesController < ApplicationController
     if @activity.save
       @activity_entry = ActivityEntry.create!(activity_id: @activity.id, group_id: @activity.group_id)
       flash[:notice] = 'Activity Saved.'
-      redirect_to activities_show_path(@activity)
+      redirect_to activity_path(@activity)
     else
       flash[:alert] = 'An error occurred. Please try again.'
       redirect_back(fallback_location: root_path)
@@ -24,7 +24,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     @activity.destroy
     flash[:notice] = 'Activity Deleted.'
-    redirect_to users_show_path(current_user)
+    redirect_to user_path(current_user)
   end
 
   private

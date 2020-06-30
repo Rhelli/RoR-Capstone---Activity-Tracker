@@ -1,7 +1,7 @@
 <main class="w-100 h-100 d-flex justify-content-center align-items-center p-0 m-0">
   <div class="my-activities-container show-activity d-flex justify-content-center align-items-center position-relative flex-column p-0 m-0">
-    <header>
-      <h1><%= @activity.name %></h1>
+    <header class="h-auto">
+      <h1 class="justify-text-center text-align-center"><%= @activity.name %></h1>
       <p>Created <%= time_ago_in_words(@activity.created_at) %> ago.</p>
     </header>
     <%= button_to 'Delete', { :controller => 'activities', action: 'destroy', :id => @activity.id }, :method => :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
@@ -11,7 +11,7 @@
           <p class="icon d-flex justify-content-center align-items-center">
             <i class="<%= @activity.group_icon %> mb-1"></i>
           </p>
-          <p><%= link_to "#{@activity.group_name}", groups_show_path(@activity.group) %></p>
+          <p><%= link_to "#{@activity.group_name}", group_path(@activity.group) %></p>
         </div>
         <div class="workout-time w-50 h-100 d-flex justify-content-center align-items-center">
           <p><%= time_converter(@activity.amount) %></p>

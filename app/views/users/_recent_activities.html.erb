@@ -4,7 +4,7 @@
       <div class="my-group-name">
         <div class="profile-widget-group-name mb-2">
           <p class="d-inline-block mb-0 recent-activity-name">
-            <%= link_to "#{activity.name}", activities_show_path(activity) %>
+            <%= link_to "#{activity.name}", activity_path(activity) %>
           </p>
           <p class="d-inline-block mb-0"> • <%= activity.calories %> cals</p>
           <p class="d-inline-block mb-0"> • <%= time_converter(activity.amount) %></p>

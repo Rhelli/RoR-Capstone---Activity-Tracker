@@ -3,7 +3,7 @@
     <li class="group-activity-list-item w-100">
       <div class="d-flex flex-row justify-content-start align-items-center">
         <div class="name-author">
-          <p class="name"><%= link_to "#{activity.name}", activities_show_path(activity) %></p>
+          <p class="name"><%= link_to "#{activity.name}", activity_path(activity) %></p>
           <p class="author"><%= "#{activity.author.first_name} #{activity.author.last_name}" %></p>
         </div>
         <div class="activity-stats d-flex flex-row align-items-center ml-auto">

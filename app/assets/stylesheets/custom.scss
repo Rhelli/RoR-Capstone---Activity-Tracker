@@ -50,6 +50,12 @@ body {
   text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
+header {
+  h1 {
+    text-align: center;
+  }
+}
+
 // FONTS ------------------------------------------------------------------------------------------//
 .bold-title {
   font: 700 42px/42px 'Proxima Nova Bold', monospace;
@@ -679,6 +685,7 @@ form {
       color: #fafbfd;
       font: 700 48px/48px 'Proxima Nova Bold';
       margin-top: -20px;
+      text-align: center;
     }
 
     p {

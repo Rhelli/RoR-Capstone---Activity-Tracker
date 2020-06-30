@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
     if @group.save
       Membership.create!(user_id: current_user.id, group_id: @group.id)
       flash[:notice] = "You created #{@group.name}. Now to get some team members!"
-      redirect_to groups_show_path(@group)
+      redirect_to group_path(@group)
     else
       flash[:alert] = 'An Error Ocurred! Please Try Again.'
       redirect_back(fallback_location: root_path)
@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     @group.destroy
     flash[:notice] = "The group #{@group.name} has been deleted."
-    redirect_to users_show_path(current_user)
+    redirect_to user_path(current_user)
   end
 
   private

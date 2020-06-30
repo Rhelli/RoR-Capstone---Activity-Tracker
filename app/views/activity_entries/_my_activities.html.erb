@@ -5,7 +5,7 @@
         <div class="activity-list-item d-flex flex-row align-items-center w-100">
           <div class="d-flex align-items-center icon-title">
             <p class="mr-2 mb-0 d-flex justify-content-center align-items-center"><i class="<%= activity.group_icon %>"></i></p>
-            <h2 class="activity-name d-inline-block"><%= link_to "#{activity.name}", activities_show_path(activity) %></h2>
+            <h2 class="activity-name d-inline-block"><%= link_to "#{activity.name}", activity_path(activity) %></h2>
           </div>
           <div class="activity-list-delete d-flex align-items-center justify-content-center mr-3 ml-auto">
             <%= button_to 'Delete', { :controller => 'activities', action: 'destroy', :id => activity.id }, :method => :delete, data: { confirm: 'Are you sure? This action cannot be undone.' }, class: 'delete-button' %>
