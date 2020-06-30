@@ -24,9 +24,13 @@ class GroupsController < ApplicationController
 
   def destroy
     @group = Group.find(params[:id])
-    @group.destroy
-    flash[:notice] = "The group #{@group.name} has been deleted."
-    redirect_to user_path(current_user)
+    if @group.destroy
+      flash[:notice] = "The group #{@group.name} has been deleted."
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = 'An error occurred. Please try again.'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private

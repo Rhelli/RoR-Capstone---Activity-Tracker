@@ -22,9 +22,13 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @activity = Activity.find(params[:id])
-    @activity.destroy
-    flash[:notice] = 'Activity Deleted.'
-    redirect_to user_path(current_user)
+    if @activity.destroy
+      flash[:notice] = 'Activity Deleted.'
+      redirect_to user_path(current_user)
+    else
+      flash[:alert] = 'An error occurred. Please try again.'
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   private
